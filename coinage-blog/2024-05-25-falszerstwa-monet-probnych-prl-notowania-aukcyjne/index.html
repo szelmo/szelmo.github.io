@@ -29,7 +29,7 @@ a:hover{text-decoration:underline}
 .site-header{background:#fff;border-bottom:2px solid var(--green);position:sticky;top:0;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,.06)}
 .header-inner{max-width:var(--wide);margin:0 auto;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo-text{display:flex;flex-direction:column}
+.logo-text{display:flex;flex-direction:column;align-items:center}
 .logo-name{font-family:var(--heading);font-size:1.2rem;font-weight:700;color:var(--green);line-height:1}
 .logo-sub{font-family:var(--mono);font-size:.45rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-faint);margin-top:3px}
 .site-nav{display:flex;gap:2rem}
@@ -180,7 +180,7 @@ table.notow tr.withdrawn td{opacity:.5}
 
 <header class="site-header">
   <div class="header-inner">
-    <a href="/" class="logo">
+    <a href="/coinage-blog/" class="logo">
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <circle cx="16" cy="16" r="11" fill="#fef9f0" stroke="#a07830" stroke-width="1.4"/>
         <circle cx="16" cy="16" r="7.5" fill="none" stroke="#a07830" stroke-width=".7" stroke-dasharray="1.8 1.4"/>
@@ -190,13 +190,11 @@ table.notow tr.withdrawn td{opacity:.5}
       </svg>
       <div class="logo-text">
         <span class="logo-name">Coinage</span>
-        <span class="logo-sub">Monety próbne PRL</span>
+        <span class="logo-sub">Blog</span>
       </div>
     </a>
     <nav class="site-nav">
-      <a href="#">Artykuły</a>
-      <a href="#" class="hide-mob">Kategorie</a>
-      <a href="#">O blogu</a>
+      <a href="/coinage-blog/">Artykuły</a>
     </nav>
   </div>
 </header>
@@ -213,16 +211,16 @@ table.notow tr.withdrawn td{opacity:.5}
       </div>
       <div class="art-cats">
         <span class="art-cats-label">Tagi:</span>
-        <a href="#" class="art-cat">Fałszerstwa</a>
-        <a href="#" class="art-cat">Próby PRL</a>
-        <a href="#" class="art-cat">Aukcje</a>
+        <span class="art-cat">Fałszerstwa</span>
+        <span class="art-cat">Próby PRL</span>
+        <span class="art-cat">Aukcje</span>
       </div>
     </div>
   </div>
 
   <div class="art-body">
     <br>
-    <p class="drop-cap">Rejestr zamieszczony poniżej jest dokumentacją obrotu fałszywymi monetami próbnymi PRL z napisem wybitym puncą. Ich szczegółowy opis i klasyfikację można znaleźć w <!-- TODO: dodać link do artykułu z klasyfikacją --><a href="#">dedykowanym wpisie</a>, do którego lektury zachęcam 🙂.</p>
+    <p class="drop-cap">Rejestr zamieszczony poniżej jest dokumentacją obrotu fałszywymi monetami próbnymi PRL z napisem wybitym puncą. Ich szczegółowy opis i klasyfikację można znaleźć w <a href="/coinage-blog/2024-05-25-falszerstwa-monet-probnych-prl-napis-proba-wybijany-punca/">dedykowanym wpisie</a>, do którego lektury zachęcam 🙂.</p>
 
     <p>Zgłaszanie i dokumentowanie kolejnych transakcji jest próbą skłonienia domów aukcyjnych do wyeliminowania tych egzemplarzy z rynku. Jak do tej pory większość z nich reaguje pozytywnie na zgłaszane wątpliwości — i wycofują one wątpliwe pozycje. Jedynie jeden z nich z uporem próbuje przekonywać, że fałszywe egzemplarze mogły opuścić mennicę jako monety oryginalne.</p>
 
@@ -680,7 +678,7 @@ table.notow tr.withdrawn td{opacity:.5}
 
 <footer class="site-footer">
   <div class="footer-logo">Coinage.pl</div>
-  <p class="footer-copy">© 2026 coinage.pl — Numizmatyka monet próbnych PRL</p>
+  <p class="footer-copy">© 2024-2026 coinage.pl</p>
 </footer>
 
 <div id="lb" onclick="this.style.display='none'"><img id="lb-img" src="" alt="" /></div>
