@@ -3,20 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Coinage.pl — Monety próbne PRL</title>
+<title>Coinage — Blog numizmatyczny</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
-:root {
+:root{
   --bg:#ffffff;--bg-footer:#1a1a18;
   --text:#111111;--text-dim:#444444;--text-faint:#888888;
   --green:#2d5a3d;--green-lt:#f4faf7;--green-bdr:#b8d8c4;
+  --gold:#9a7020;
   --red:#8b2318;--red-bg:#fdf0ee;--red-bdr:#e8b4ac;
   --rule:#e0e0dc;--gray-bg:#f7f7f5;
   --serif:'Source Serif 4',Georgia,serif;
   --heading:'Lora',Georgia,serif;
   --mono:'DM Mono',monospace;
-  --wide:1100px;--content:860px;
+  --wide:1100px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{font-size:19px}
@@ -31,81 +32,61 @@ a:hover{text-decoration:underline}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
 .logo-text{display:flex;flex-direction:column;align-items:center}
 .logo-name{font-family:var(--heading);font-size:1.2rem;font-weight:700;color:var(--green);line-height:1}
-.logo-sub{font-family:var(--mono);font-size:.45rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-faint);margin-top:3px}
 .site-nav{display:flex;gap:2rem}
 .site-nav a{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);text-decoration:none}
 .site-nav a:hover{color:var(--green)}
 .site-nav a.active{color:var(--green);border-bottom:2px solid var(--green);padding-bottom:2px}
 
-/* HERO */
-.hero{
-  background:var(--green);
-  padding:2.5rem 2rem;
-  display:flex;align-items:center;justify-content:center;
-}
-.hero-inner{
-  display:flex;align-items:center;justify-content:center;
-  gap:2.5rem;
-}
-.hero-img{
-  width:200px;height:200px;
-  border-radius:6px;overflow:hidden;flex-shrink:0;
-}
-.hero-img img{
-  width:100%;height:100%;object-fit:cover;object-position:center center;display:block;
-}
-.hero-text{
-  display:flex;flex-direction:column;align-items:flex-start;gap:.3rem;
-}
-.hero-text-name{
-  font-family:var(--heading);font-size:clamp(2.2rem,4vw,3.2rem);
-  font-weight:700;color:#fff;letter-spacing:-.02em;line-height:1;
-}
-.hero-text-sub{
-  font-family:var(--mono);font-size:.55rem;
-  letter-spacing:.22em;text-transform:uppercase;
-  color:rgba(255,255,255,.65);
-}
-@media(max-width:640px){
-  .hero-inner{flex-direction:column;gap:1.5rem;text-align:center}
-  .hero-img{width:160px;height:160px}
-  .hero-text{align-items:center}
-}
+/* HERO C */
+.hero-c{background:var(--green)}
+.hero-c-inner{max-width:var(--wide);margin:0 auto;display:flex;align-items:stretch}
+.hero-c-left{padding:1.6rem 2.2rem;display:flex;flex-direction:column;justify-content:center;align-items:center;border-right:1px solid rgba(255,255,255,.12);min-width:210px;gap:.2rem}
+.hero-c-title{font-family:var(--heading);font-size:2.4rem;font-weight:700;color:#fff;letter-spacing:-.02em;line-height:1}
+.hero-c-sub{font-family:var(--mono);font-size:.48rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.hero-c-right{padding:1.4rem 2rem;display:flex;flex-direction:column;justify-content:center;gap:.7rem;flex:1}
+.hero-c-desc{font-family:var(--serif);font-size:.88rem;color:rgba(255,255,255,.8);font-style:italic;line-height:1.65;max-width:460px}
+
+
+
+/* FILTER BAR */
+.filter-bar{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;
+  padding:.7rem 1rem;background:#fff;
+  border:1px solid var(--rule);border-radius:6px;margin-bottom:1.6rem}
+.filter-bar-label{font-family:var(--mono);font-size:.46rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--text-faint);margin-right:.3rem;flex-shrink:0}
+.ftag{font-family:var(--mono);font-size:.46rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:.22rem .7rem;border-radius:4px;border:1px solid var(--rule);
+  background:#fff;color:var(--text-dim);cursor:pointer;transition:all .15s;user-select:none}
+.ftag:hover{border-color:var(--green-bdr);color:var(--green)}
+.ftag.ftag-all{border-style:dashed}
+.ftag.ftag-active{background:var(--green-lt);color:var(--green);border-color:var(--green-bdr);font-weight:600}
+.ftag.ftag-red.ftag-active{background:var(--red-bg);color:var(--red);border-color:var(--red-bdr)}
+.art-card.dimmed{opacity:.15;pointer-events:none;transform:scale(.98)}
 
 /* MAIN */
-.main{max-width:var(--wide);margin:3rem auto 5rem;padding:0 2rem}
+.main{max-width:var(--wide);margin:1.2rem auto 5rem;padding:0 2rem}
 .section-label{font-family:var(--mono);font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-faint);margin-bottom:1.2rem;display:flex;align-items:center;gap:.8rem}
 .section-label::after{content:'';flex:1;height:1px;background:var(--rule)}
 
-/* ARTICLE GRID */
-.articles{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.5rem}
-
-.art-card{border:1px solid var(--rule);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
+/* CARDS */
+.articles{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;margin-bottom:2.5rem}
+.art-card{border:1px solid var(--rule);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s,opacity .25s}
 .art-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.09);transform:translateY(-2px);text-decoration:none}
-
-.art-card-hero{height:140px;background:var(--gray-bg);overflow:hidden;position:relative}
-.art-card-hero img{width:100%;height:100%;object-fit:cover}
-.art-card-hero-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
-
+.art-card.dimmed{opacity:.15;pointer-events:none;transform:scale(.98)}
+.art-card-hero{height:140px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center}
+.art-card-hero img{width:100%;height:100%;object-fit:cover;object-position:center}
 .art-card-body{padding:1.1rem 1.2rem 1rem;flex:1;display:flex;flex-direction:column;gap:.5rem}
 .art-card-meta{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
 .art-card-date{font-family:var(--mono);font-size:.48rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint)}
 .art-card-tags{display:flex;gap:.3rem;flex-wrap:wrap}
 .art-card-tag{font-family:var(--mono);font-size:.42rem;letter-spacing:.1em;text-transform:uppercase;background:#e8f4ee;color:#1d4a2e;border:1px solid #8fc4a4;padding:.18rem .5rem;border-radius:3px}
 .art-card-tag.red{background:var(--red-bg);color:var(--red);border-color:var(--red-bdr)}
-
 .art-card-title{font-family:var(--heading);font-size:1rem;font-weight:700;color:var(--text);line-height:1.25;letter-spacing:-.01em}
 .art-card-subtitle{font-size:.82rem;font-style:italic;color:var(--text-dim);margin-top:-.3rem}
 .art-card-excerpt{font-size:.82rem;color:var(--text-dim);line-height:1.6;flex:1}
 .art-card-footer{display:flex;align-items:center;justify-content:space-between;padding:.7rem 1.2rem;border-top:1px solid var(--rule);background:var(--gray-bg)}
 .art-card-readmore{font-family:var(--mono);font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
 .art-card-readtime{font-family:var(--mono);font-size:.48rem;color:var(--text-faint)}
-
-/* SERIES GROUP */
-.series-group{margin-bottom:3rem}
-.series-header{display:flex;align-items:baseline;gap:.8rem;margin-bottom:1rem;padding-bottom:.6rem;border-bottom:2px solid var(--green-bdr)}
-.series-name{font-family:var(--heading);font-size:1rem;font-weight:700;color:var(--text)}
-.series-count{font-family:var(--mono);font-size:.5rem;letter-spacing:.1em;color:var(--text-faint)}
 
 /* FOOTER */
 .site-footer{background:var(--bg-footer);color:rgba(255,255,255,.4);padding:2.5rem 2rem;text-align:center}
@@ -115,8 +96,10 @@ a:hover{text-decoration:underline}
 @media(max-width:640px){
   html{font-size:17px}
   .header-inner{padding:0 1.2rem}
-  .hero{padding:3rem 1.2rem 2.5rem}
-  .main{padding:0 1.2rem;margin-top:2rem}
+  .hero-c-inner{flex-direction:column}
+  .hero-c-left{border-right:none;border-bottom:1px solid rgba(255,255,255,.12);min-width:auto;padding:1.2rem}
+  .hero-c-right{padding:1.2rem}
+  .main{padding:0 1.2rem}
   .articles{grid-template-columns:1fr}
   .site-nav .hide-mob{display:none}
 }
@@ -124,125 +107,117 @@ a:hover{text-decoration:underline}
 </head>
 <body>
 
-<header class="site-header">
-  <div class="header-inner">
-    <a href="/coinage-blog/" class="logo">
-      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-        <circle cx="16" cy="16" r="11" fill="#fef9f0" stroke="#a07830" stroke-width="1.4"/>
-        <circle cx="16" cy="16" r="7.5" fill="none" stroke="#a07830" stroke-width=".7" stroke-dasharray="1.8 1.4"/>
-        <circle cx="16" cy="16" r="4.5" fill="none" stroke="#a07830" stroke-width=".5"/>
-        <line x1="24.5" y1="24.5" x2="33" y2="33" stroke="#2d5a3d" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="16" cy="16" r="11" fill="none" stroke="#2d5a3d" stroke-width="1.8"/>
-      </svg>
-      <div class="logo-text">
-        <span class="logo-name">Coinage</span>
-        <span class="logo-sub">Blog</span>
-      </div>
-    </a>
-    <nav class="site-nav">
-      <a href="/coinage-blog/" class="active">Artykuły</a>
-    </nav>
+<div class="hero-c">
+  <div class="hero-c-inner">
+    <div class="hero-c-left">
+      <div class="hero-c-title">Coinage</div>
+      <div class="hero-c-sub">Blog numizmatyczny</div>
+    </div>
+    <div class="hero-c-right">
+      <div class="hero-c-desc">Świat polskich monet z perspektywy ich kolekcjonera i pasjonata.</div>
+    </div>
   </div>
-</header>
-
-
-
+</div>
 
 <main class="main">
 
-  <div class="section-label">Wszystkie wpisy</div>
-
-  <!-- SERIA: Fałszywe próby PRL wybijane puncą -->
-  <div class="series-group">
-    <div class="series-header">
-      <span class="series-name">Fałszywe próby PRL wybijane puncą</span>
-      <span class="series-count">3 wpisy</span>
-    </div>
-    <div class="articles">
-
-      <a href="./2025-04-05-nowe-falszywe-proby-prl-wybijane-punca/" class="art-card">
-        <div class="art-card-hero">
-          <div class="art-card-hero-placeholder" style="background:#1a1a18">
-            <img src="./2025-04-05-nowe-falszywe-proby-prl-wybijane-punca/img/title.png" alt="" style="max-height:140px;width:auto;object-fit:contain" />
-          </div>
-        </div>
-        <div class="art-card-body">
-          <div class="art-card-meta">
-            <span class="art-card-date">5 kwietnia 2025</span>
-            <div class="art-card-tags">
-              <span class="art-card-tag red">Fałszerstwa</span>
-              <span class="art-card-tag">Próby PRL</span>
-            </div>
-          </div>
-          <div class="art-card-title">Fałszywe próby PRL wybijane puncą</div>
-          <div class="art-card-subtitle">Nowe egzemplarze</div>
-          <p class="art-card-excerpt">Trzy nowe egzemplarze fałszywych monet próbnych PRL z napisem wybitym puncą odnalezione w archiwach aukcyjnych.</p>
-        </div>
-        <div class="art-card-footer">
-          <span class="art-card-readmore">Czytaj →</span>
-          <span class="art-card-readtime">4 min</span>
-        </div>
-      </a>
-
-      <a href="./2024-05-25-falszerstwa-monet-probnych-prl-napis-proba-wybijany-punca/" class="art-card">
-        <div class="art-card-hero" style="background:var(--gray-bg);display:flex;align-items:center;justify-content:center">
-          <img src="./2024-05-25-falszerstwa-monet-probnych-prl-napis-proba-wybijany-punca/img/title.jpg" alt="" style="max-height:140px;width:auto" />
-        </div>
-        <div class="art-card-body">
-          <div class="art-card-meta">
-            <span class="art-card-date">25 maja 2024</span>
-            <div class="art-card-tags">
-              <span class="art-card-tag red">Fałszerstwa</span>
-              <span class="art-card-tag">Próby PRL</span>
-            </div>
-          </div>
-          <div class="art-card-title">Fałszywe próby PRL wybijane puncą</div>
-          <div class="art-card-subtitle">Klasyfikacja</div>
-          <p class="art-card-excerpt">Opis i klasyfikacja fałszerstw monet próbnych PRL z napisem PRÓBA wybitym puncą — typy, nominały, cechy rozpoznawcze.</p>
-        </div>
-        <div class="art-card-footer">
-          <span class="art-card-readmore">Czytaj →</span>
-          <span class="art-card-readtime">12 min</span>
-        </div>
-      </a>
-
-      <a href="./2024-05-25-falszerstwa-monet-probnych-prl-notowania-aukcyjne/" class="art-card">
-        <div class="art-card-hero" style="background:var(--green);display:flex;align-items:center;justify-content:center">
-          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" opacity=".3">
-            <rect x="8" y="12" width="48" height="6" rx="3" fill="#fff"/>
-            <rect x="8" y="26" width="32" height="4" rx="2" fill="#fff"/>
-            <rect x="8" y="38" width="40" height="4" rx="2" fill="#fff"/>
-            <rect x="8" y="50" width="24" height="4" rx="2" fill="#fff"/>
-          </svg>
-        </div>
-        <div class="art-card-body">
-          <div class="art-card-meta">
-            <span class="art-card-date">25 maja 2024 · aktualizowany</span>
-            <div class="art-card-tags">
-              <span class="art-card-tag red">Fałszerstwa</span>
-              <span class="art-card-tag">Aukcje</span>
-            </div>
-          </div>
-          <div class="art-card-title">Fałszywe próby PRL wybijane puncą</div>
-          <div class="art-card-subtitle">Notowania aukcyjne</div>
-          <p class="art-card-excerpt">Rejestr transakcji fałszywymi monetami próbnymi PRL — dokumentacja cyrkulacji rynkowej, na bieżąco aktualizowany.</p>
-        </div>
-        <div class="art-card-footer">
-          <span class="art-card-readmore">Czytaj →</span>
-          <span class="art-card-readtime">rejestr</span>
-        </div>
-      </a>
-
-    </div>
+  <div class="filter-bar">
+    <span class="filter-bar-label">Filtruj:</span>
+    <span class="ftag ftag-all ftag-active" onclick="filterCards(this,'')">Wszystkie</span>
+    <span class="ftag ftag-red" onclick="filterCards(this,'Fałszerstwa')">Fałszerstwa</span>
+    <span class="ftag" onclick="filterCards(this,'Próby PRL')">Próby PRL</span>
+    <span class="ftag" onclick="filterCards(this,'Grading')">Grading</span>
+    <span class="ftag" onclick="filterCards(this,'Aukcje')">Aukcje</span>
+    <span class="ftag" onclick="filterCards(this,'NGC')">NGC</span>
   </div>
 
-  <!-- POZOSTAŁE WPISY -->
-  <div class="section-label">Pozostałe wpisy</div>
+  <div class="section-label">Fałszywe próby PRL</div>
   <div class="articles">
 
-    <a href="./2025-12-29-co-wy-tam-gradujecie/" class="art-card">
+    <a href="./2024-05-25-falszerstwa-monet-probnych-prl-napis-proba-wybijany-punca/" class="art-card" data-tags="Fałszerstwa,Próby PRL">
       <div class="art-card-hero">
-        <img src="./2025-12-29-co-wy-tam-gradujecie/img/title-3.png" alt="" style="width:100%;height:140px;object-fit:cover;object-position:center" />
+        <img src="./2024-05-25-falszerstwa-monet-probnych-prl-napis-proba-wybijany-punca/img/title.jpg" alt="" style="width:100%;height:140px;object-fit:cover" />
+      </div>
+      <div class="art-card-body">
+        <div class="art-card-meta">
+          <span class="art-card-date">25 maja 2024</span>
+          <div class="art-card-tags">
+            <span class="art-card-tag red">Fałszerstwa</span>
+            <span class="art-card-tag">Próby PRL</span>
+          </div>
+        </div>
+        <div class="art-card-title">Fałszywe próby PRL wybijane puncą</div>
+        <div class="art-card-subtitle">Klasyfikacja</div>
+        <p class="art-card-excerpt">Opis i klasyfikacja fałszerstw monet próbnych PRL z napisem PRÓBA wybitym puncą — typy, nominały, cechy rozpoznawcze.</p>
+      </div>
+      <div class="art-card-footer">
+        <span class="art-card-readmore">Czytaj →</span>
+        <span class="art-card-readtime">12 min</span>
+      </div>
+    </a>
+
+    <a href="./2024-05-25-falszerstwa-monet-probnych-prl-notowania-aukcyjne/" class="art-card" data-tags="Fałszerstwa,Próby PRL,Aukcje">
+      <div class="art-card-hero" style="background:var(--green)">
+        <svg width="80" height="64" viewBox="0 0 80 64" fill="none" opacity=".35">
+          <circle cx="18" cy="32" r="13" stroke="#fff" stroke-width="3.5" fill="none"/>
+          <line x1="28" y1="42" x2="36" y2="52" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="14" y1="32" x2="22" y2="32" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="18" y1="28" x2="18" y2="36" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+          <rect x="40" y="14" width="32" height="5" rx="2.5" fill="#fff"/>
+          <rect x="40" y="26" width="22" height="4" rx="2" fill="#fff"/>
+          <rect x="40" y="37" width="26" height="4" rx="2" fill="#fff"/>
+          <rect x="40" y="48" width="18" height="4" rx="2" fill="#fff"/>
+        </svg>
+      </div>
+      <div class="art-card-body">
+        <div class="art-card-meta">
+          <span class="art-card-date">25 maja 2024 · aktualizowany</span>
+          <div class="art-card-tags">
+            <span class="art-card-tag red">Fałszerstwa</span>
+            <span class="art-card-tag">Próby PRL</span>
+            <span class="art-card-tag">Aukcje</span>
+          </div>
+        </div>
+        <div class="art-card-title">Fałszywe próby PRL wybijane puncą</div>
+        <div class="art-card-subtitle">Notowania aukcyjne</div>
+        <p class="art-card-excerpt">Rejestr transakcji fałszywych monet próbnych PRL — aktualizowany na bieżąco.</p>
+      </div>
+      <div class="art-card-footer">
+        <span class="art-card-readmore">Czytaj →</span>
+        <span class="art-card-readtime">rejestr</span>
+      </div>
+    </a>
+
+    <a href="./2025-04-05-nowe-falszywe-proby-prl-wybijane-punca/" class="art-card" data-tags="Fałszerstwa,Próby PRL">
+      <div class="art-card-hero" style="background:#fff;border-bottom:1px solid var(--rule)">
+        <img src="./2025-04-05-nowe-falszywe-proby-prl-wybijane-punca/img/title.png" alt="" style="max-height:140px;width:auto;object-fit:contain" />
+      </div>
+      <div class="art-card-body">
+        <div class="art-card-meta">
+          <span class="art-card-date">5 kwietnia 2025</span>
+          <div class="art-card-tags">
+            <span class="art-card-tag red">Fałszerstwa</span>
+            <span class="art-card-tag">Próby PRL</span>
+          </div>
+        </div>
+        <div class="art-card-title">Fałszywe próby PRL wybijane puncą</div>
+        <div class="art-card-subtitle">Nowe egzemplarze</div>
+        <p class="art-card-excerpt">Trzy nowe egzemplarze fałszywych monet próbnych PRL z napisem wybitym puncą odnalezione w archiwach aukcyjnych.</p>
+      </div>
+      <div class="art-card-footer">
+        <span class="art-card-readmore">Czytaj →</span>
+        <span class="art-card-readtime">4 min</span>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="section-label">Smaczki gradingu</div>
+  <div class="articles">
+
+    <a href="./2025-12-29-co-wy-tam-gradujecie/" class="art-card" data-tags="Grading,NGC,Próby PRL">
+      <div class="art-card-hero" style="background:#fff;border-bottom:1px solid var(--rule)">
+        <img src="./2025-12-29-co-wy-tam-gradujecie/img/title-3.png" alt="" style="max-height:140px;width:auto;object-fit:contain" />
       </div>
       <div class="art-card-body">
         <div class="art-card-meta">
@@ -255,7 +230,7 @@ a:hover{text-decoration:underline}
         </div>
         <div class="art-card-title">Co Wy tam gradujecie…</div>
         <div class="art-card-subtitle">…czyli nieoczywiste zalety gradingu</div>
-        <p class="art-card-excerpt">O tym jak grading monet może służyć jako narzędzie badawcze — dokumentując istnienie rzadkich prób PRL w kolekcjach prywatnych.</p>
+        <p class="art-card-excerpt">O tym jak grading monet może służyć jako narzędzie badawcze — dokumentując istnienie monet w kolekcjach prywatnych.</p>
       </div>
       <div class="art-card-footer">
         <span class="art-card-readmore">Czytaj →</span>
@@ -271,6 +246,17 @@ a:hover{text-decoration:underline}
   <div class="footer-logo">Coinage.pl</div>
   <p class="footer-copy">© 2024-2026 coinage.pl</p>
 </footer>
+
+<script>
+function filterCards(el, tag) {
+  document.querySelectorAll('.ftag').forEach(function(t){ t.classList.remove('ftag-active'); });
+  el.classList.add('ftag-active');
+  document.querySelectorAll('.art-card').forEach(function(card) {
+    var match = !tag || (card.dataset.tags||'').indexOf(tag) !== -1;
+    card.classList.toggle('dimmed', !match);
+  });
+}
+</script>
 
 </body>
 </html>
