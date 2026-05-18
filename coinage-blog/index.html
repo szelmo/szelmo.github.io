@@ -4,106 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Coinage — Blog numizmatyczny</title>
+<meta name="description" content="Świat polskich monet z perspektywy kolekcjonera i pasjonata. Opracowania, klasyfikacje i rejestry aukcyjne monet próbnych PRL.">
+<link rel="canonical" href="https://szelmo.github.io/coinage-blog/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#ffffff;--bg-footer:#1a1a18;
-  --text:#111111;--text-dim:#444444;--text-faint:#888888;
-  --green:#2d5a3d;--green-lt:#f4faf7;--green-bdr:#b8d8c4;
-  --gold:#9a7020;
-  --red:#8b2318;--red-bg:#fdf0ee;--red-bdr:#e8b4ac;
-  --rule:#e0e0dc;--gray-bg:#f7f7f5;
-  --serif:'Source Serif 4',Georgia,serif;
-  --heading:'Lora',Georgia,serif;
-  --mono:'DM Mono',monospace;
-  --wide:1100px;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{font-size:19px}
-body{background:var(--bg);color:var(--text);font-family:var(--serif);line-height:1.78;-webkit-font-smoothing:antialiased}
-img{max-width:100%;height:auto;display:block}
-a{color:var(--green);text-decoration:none}
-a:hover{text-decoration:underline}
-
-/* NAV */
-.site-header{background:#fff;border-bottom:2px solid var(--green);position:sticky;top:0;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.header-inner{max-width:var(--wide);margin:0 auto;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo-text{display:flex;flex-direction:column;align-items:center}
-.logo-name{font-family:var(--heading);font-size:1.2rem;font-weight:700;color:var(--green);line-height:1}
-.site-nav{display:flex;gap:2rem}
-.site-nav a{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);text-decoration:none}
-.site-nav a:hover{color:var(--green)}
-.site-nav a.active{color:var(--green);border-bottom:2px solid var(--green);padding-bottom:2px}
-
-/* HERO C */
-.hero-c{background:var(--green)}
-.hero-c-inner{max-width:var(--wide);margin:0 auto;display:flex;align-items:stretch}
-.hero-c-left{padding:1.6rem 2.2rem;display:flex;flex-direction:column;justify-content:center;align-items:center;border-right:1px solid rgba(255,255,255,.12);min-width:210px;gap:.2rem}
-.hero-c-title{font-family:var(--heading);font-size:2.4rem;font-weight:700;color:#fff;letter-spacing:-.02em;line-height:1}
-.hero-c-sub{font-family:var(--mono);font-size:.48rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.45)}
-.hero-c-right{padding:1.4rem 2rem;display:flex;flex-direction:column;justify-content:center;gap:.7rem;flex:1}
-.hero-c-desc{font-family:var(--serif);font-size:.88rem;color:rgba(255,255,255,.8);font-style:italic;line-height:1.65;white-space:nowrap}
-
-
-
-/* FILTER BAR */
-.filter-bar{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;
-  padding:.7rem 1rem;background:#fff;
-  border:1px solid var(--rule);border-radius:6px;margin-bottom:1.6rem}
-.filter-bar-label{font-family:var(--mono);font-size:.46rem;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--text-faint);margin-right:.3rem;flex-shrink:0}
-.ftag{font-family:var(--mono);font-size:.46rem;letter-spacing:.1em;text-transform:uppercase;
-  padding:.22rem .7rem;border-radius:4px;border:1px solid var(--rule);
-  background:#fff;color:var(--text-dim);cursor:pointer;transition:all .15s;user-select:none}
-.ftag:hover{border-color:var(--green-bdr);color:var(--green)}
-.ftag.ftag-all{border-style:dashed}
-.ftag.ftag-active{background:var(--green-lt);color:var(--green);border-color:var(--green-bdr);font-weight:600}
-.ftag.ftag-red.ftag-active{background:var(--red-bg);color:var(--red);border-color:var(--red-bdr)}
-.art-card.dimmed{opacity:.15;pointer-events:none;transform:scale(.98)}
-
-/* MAIN */
-.main{max-width:var(--wide);margin:1.2rem auto 5rem;padding:0 2rem}
-.section-label{font-family:var(--mono);font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-faint);margin-bottom:1.2rem;display:flex;align-items:center;gap:.8rem}
-.section-label::after{content:'';flex:1;height:1px;background:var(--rule)}
-
-/* CARDS */
-.articles{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;margin-bottom:2.5rem}
-.art-card{border:1px solid var(--rule);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s,opacity .25s}
-.art-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.09);transform:translateY(-2px);text-decoration:none}
-.art-card.dimmed{opacity:.15;pointer-events:none;transform:scale(.98)}
-.art-card-hero{height:140px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center}
-.art-card-hero img{width:100%;height:100%;object-fit:cover;object-position:center}
-.art-card-body{padding:1.1rem 1.2rem 1rem;flex:1;display:flex;flex-direction:column;gap:.5rem}
-.art-card-meta{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
-.art-card-date{font-family:var(--mono);font-size:.48rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint)}
-.art-card-tags{display:flex;gap:.3rem;flex-wrap:wrap}
-.art-card-tag{font-family:var(--mono);font-size:.42rem;letter-spacing:.1em;text-transform:uppercase;background:#e8f4ee;color:#1d4a2e;border:1px solid #8fc4a4;padding:.18rem .5rem;border-radius:3px}
-.art-card-tag.red{background:var(--red-bg);color:var(--red);border-color:var(--red-bdr)}
-.art-card-title{font-family:var(--heading);font-size:1rem;font-weight:700;color:var(--text);line-height:1.25;letter-spacing:-.01em}
-.art-card-subtitle{font-size:.82rem;font-style:italic;color:var(--text-dim);margin-top:-.3rem}
-.art-card-excerpt{font-size:.82rem;color:var(--text-dim);line-height:1.6;flex:1}
-.art-card-footer{display:flex;align-items:center;justify-content:space-between;padding:.7rem 1.2rem;border-top:1px solid var(--rule);background:var(--gray-bg)}
-.art-card-readmore{font-family:var(--mono);font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
-.art-card-readtime{font-family:var(--mono);font-size:.48rem;color:var(--text-faint)}
-
-/* FOOTER */
-.site-footer{background:var(--bg-footer);color:rgba(255,255,255,.4);padding:2.5rem 2rem;text-align:center}
-.footer-logo{font-family:var(--heading);font-size:1rem;color:rgba(255,255,255,.75);margin-bottom:.5rem;font-weight:600}
-.footer-copy{font-family:var(--mono);font-size:.5rem;letter-spacing:.1em;text-transform:uppercase}
-
-@media(max-width:640px){
-  html{font-size:17px}
-  .header-inner{padding:0 1.2rem}
-  .hero-c-inner{flex-direction:column}
-  .hero-c-left{border-right:none;border-bottom:1px solid rgba(255,255,255,.12);min-width:auto;padding:1.2rem}
-  .hero-c-right{padding:1.2rem}
-  .main{padding:0 1.2rem}
-  .articles{grid-template-columns:1fr}
-  .site-nav .hide-mob{display:none}
-}
-</style>
+<link rel="stylesheet" href="/coinage-blog/css/base.css">
+<link rel="stylesheet" href="/coinage-blog/css/index.css">
+<!-- Analytics: uncomment after GoatCounter setup
+<script data-goatcounter="https://TWOJA-NAZWA.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+-->
 </head>
 <body>
 
@@ -136,7 +47,7 @@ a:hover{text-decoration:underline}
 
     <a href="./2024-05-25-falszerstwa-monet-probnych-prl-napis-proba-wybijany-punca/" class="art-card" data-tags="Fałszerstwa,Próby PRL">
       <div class="art-card-hero">
-        <img src="./2024-05-25-falszerstwa-monet-probnych-prl-napis-proba-wybijany-punca/img/title.jpg" alt="" style="width:100%;height:140px;object-fit:cover" />
+        <img loading="lazy" src="./2024-05-25-falszerstwa-monet-probnych-prl-napis-proba-wybijany-punca/img/title.jpg" alt="" style="width:100%;height:140px;object-fit:cover" />
       </div>
       <div class="art-card-body">
         <div class="art-card-meta">
@@ -190,7 +101,7 @@ a:hover{text-decoration:underline}
 
     <a href="./2025-04-05-nowe-falszywe-proby-prl-wybijane-punca/" class="art-card" data-tags="Fałszerstwa,Próby PRL">
       <div class="art-card-hero" style="background:#fff;border-bottom:1px solid var(--rule)">
-        <img src="./2025-04-05-nowe-falszywe-proby-prl-wybijane-punca/img/title.png" alt="" style="max-height:140px;width:auto;object-fit:contain" />
+        <img loading="lazy" src="./2025-04-05-nowe-falszywe-proby-prl-wybijane-punca/img/title.png" alt="" style="max-height:140px;width:auto;object-fit:contain" />
       </div>
       <div class="art-card-body">
         <div class="art-card-meta">
@@ -217,7 +128,7 @@ a:hover{text-decoration:underline}
 
     <a href="./2025-12-29-co-wy-tam-gradujecie/" class="art-card" data-tags="Grading,NGC,Próby PRL">
       <div class="art-card-hero" style="background:#fff;border-bottom:1px solid var(--rule)">
-        <img src="./2025-12-29-co-wy-tam-gradujecie/img/title-3.png" alt="" style="max-height:140px;width:auto;object-fit:contain" />
+        <img loading="lazy" src="./2025-12-29-co-wy-tam-gradujecie/img/title-3.png" alt="" style="max-height:140px;width:auto;object-fit:contain" />
       </div>
       <div class="art-card-body">
         <div class="art-card-meta">

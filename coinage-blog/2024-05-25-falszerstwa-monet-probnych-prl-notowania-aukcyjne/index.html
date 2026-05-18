@@ -3,178 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fałszywe próby PRL wybijane puncą — notowania aukcyjne — Coinage.pl</title>
+<title>Fałszywe próby PRL wybijane puncą — Notowania aukcyjne — Coinage</title>
+<meta name="description" content="Rejestr transakcji fałszywych monet próbnych PRL z napisem wybitym puncą — aktualizowany na bieżąco.">
+<link rel="canonical" href="https://szelmo.github.io/coinage-blog/2024-05-25-falszerstwa-monet-probnych-prl-notowania-aukcyjne/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
-<style>
-:root {
-  --bg:#ffffff;--bg-footer:#1a1a18;
-  --text:#111111;--text-dim:#444444;--text-faint:#888888;
-  --green:#2d5a3d;--green-lt:#f4faf7;--green-bdr:#b8d8c4;
-  --gold:#f0e080;
-  --red:#8b2318;--red-bg:#fdf0ee;--red-bdr:#e8b4ac;
-  --rule:#e0e0dc;--gray-bg:#f7f7f5;
-  --serif:'Source Serif 4',Georgia,serif;
-  --heading:'Lora',Georgia,serif;
-  --mono:'DM Mono',monospace;
-  --content:860px;--wide:1100px;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{font-size:19px}
-body{background:var(--bg);color:var(--text);font-family:var(--serif);line-height:1.78;-webkit-font-smoothing:antialiased}
-img{max-width:100%;height:auto;display:block}
-a{color:var(--green)}
-a:hover{text-decoration:underline}
-
-.site-header{background:#fff;border-bottom:2px solid var(--green);position:sticky;top:0;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.header-inner{max-width:var(--wide);margin:0 auto;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo-text{display:flex;flex-direction:column;align-items:center}
-.logo-name{font-family:var(--heading);font-size:1.2rem;font-weight:700;color:var(--green);line-height:1}
-.logo-sub{font-family:var(--mono);font-size:.45rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-faint);margin-top:3px}
-.site-nav{display:flex;gap:2rem}
-.site-nav a{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);text-decoration:none}
-.site-nav a:hover{color:var(--green)}
-
-.art-hdr{border-bottom:1px solid var(--rule);padding:3rem 2rem 2rem}
-.art-hdr-inner{max-width:var(--content);margin:0 auto}
-.art-cats{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-top:.9rem}
-.art-cats-label{font-family:var(--mono);font-size:.46rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-faint);margin-right:.1rem}
-.art-cat{font-family:var(--mono);font-size:.46rem;letter-spacing:.12em;text-transform:uppercase;background:#e8f4ee;color:#1d4a2e;border:1px solid #8fc4a4;padding:.22rem .65rem;border-radius:3px;font-weight:500;text-decoration:none}
-.art-cat:hover{background:#c8e8d8;text-decoration:none}
-h1.art-title{font-family:var(--heading);font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;color:var(--text);line-height:1.18;letter-spacing:-.015em;margin-bottom:.3rem}
-.art-intro-sub{font-size:1.05rem;font-style:italic;color:var(--text-dim);margin-bottom:.9rem}
-.art-meta{font-family:var(--mono);font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint);display:flex;gap:.8rem;align-items:center}
-.art-meta::before{content:'';display:inline-block;width:24px;height:2px;background:var(--green)}
-
-.art-body{max-width:var(--content);margin:2rem auto 5rem;padding:0 2rem}
-.art-body p{margin-bottom:.85rem;font-size:1rem;text-align:justify;hyphens:auto}
-.art-body a{color:var(--green)}
-
-.update-box{border-left:3px solid var(--green);background:var(--green-lt);border-radius:0 4px 4px 0;padding:.7rem 1rem .7rem 1.1rem;margin:.6rem 0;font-size:.88rem;line-height:1.6}
-.update-date{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green);font-weight:700;display:block;margin-bottom:.25rem}
-
-hr.section-hr{border:none;border-top:1px solid var(--rule);width:60%;margin:1.8rem auto}
-
-/* ── TABLES ── */
-.denom-block{border:1px solid var(--rule);border-radius:6px;overflow:visible;margin-bottom:1.4rem}
-.denom-header{background:var(--green);padding:9px 16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;border-radius:5px 5px 0 0}
-.denom-title{font-family:var(--heading);font-size:.95rem;font-weight:700;color:#fff}
-.denom-count{font-family:var(--mono);font-size:.5rem;color:rgba(255,255,255,.6);letter-spacing:.08em}
-table.notow{width:100%;border-collapse:collapse;font-family:var(--serif);font-size:.82rem;table-layout:fixed}
-table.notow th{font-family:var(--mono);font-size:.46rem;letter-spacing:.12em;text-transform:uppercase;padding:6px 10px;border-bottom:2px solid var(--rule);text-align:left;background:var(--gray-bg);color:var(--text);font-weight:500}
-table.notow th.c{text-align:center}
-table.notow td{padding:7px 10px;border-bottom:1px solid var(--rule);vertical-align:middle;color:var(--text)}
-table.notow tr:last-child td{border-bottom:none}
-table.notow tr:hover td{background:#fafaf8}
-table.notow tr.withdrawn td{opacity:.5}
-
-.badge-tx{font-family:var(--mono);font-size:.55rem;font-weight:700;color:var(--red);border:1.5px solid var(--red);border-radius:3px;padding:2px 7px;white-space:nowrap;display:inline-block}
-.badge-type{font-family:var(--mono);font-size:.55rem;font-weight:700;background:var(--red);color:#fff;border-radius:3px;padding:2px 7px;display:inline-block;margin-left:5px}
-.sep-row td{background:var(--red-bg);padding:4px 12px;border-bottom:1px solid var(--red-bdr);border-top:1px solid var(--red-bdr)}
-.sep-inner{display:flex;align-items:center;width:100%}
-
-.tx-num{font-family:var(--mono);font-size:.6rem;color:var(--text-dim)}
-.date-cell{font-family:var(--mono);font-size:.6rem;color:var(--text-dim);white-space:nowrap}
-.weight-cell{font-family:var(--mono);font-size:.6rem;color:var(--text-dim);text-align:center}
-.price-cell{font-family:var(--mono);font-size:.68rem;font-weight:700;text-align:center;line-height:1.5}
-.price-val{display:block}
-.price-val.struck{text-decoration:line-through;color:var(--text-faint)}
-.tag-wycofana{display:inline-block;margin-top:2px;font-family:var(--mono);font-size:.44rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;background:#fff3f0;color:var(--red);border:1px solid var(--red-bdr);border-radius:3px;padding:1px 5px}
-.tag-ngc{font-family:var(--mono);font-size:.5rem;background:var(--green-lt);color:var(--green);border:1px solid var(--green-bdr);border-radius:3px;padding:1px 5px;letter-spacing:.03em;white-space:nowrap;display:inline-block}
-.note-cell{font-size:.75rem;font-style:italic;color:var(--text-dim);line-height:1.5}
-.link-cell{text-align:center}
-.link-cell a{font-family:var(--mono);font-size:.55rem;color:var(--green);text-decoration:none;white-space:nowrap}
-.link-cell a:hover{text-decoration:underline}
-
-.coin-imgs{display:flex;gap:5px;align-items:flex-start}
-.img-wrap{display:flex;flex-direction:column;align-items:center;gap:2px}
-.coin-img{max-height:80px;width:auto;border-radius:3px;border:1px solid var(--rule);cursor:zoom-in}
-.zoom-hint{line-height:1;text-align:center;cursor:zoom-in}
-.zoom-hint svg{width:12px;height:12px;opacity:.32;vertical-align:middle;transition:opacity .15s}
-.zoom-hint:hover svg,.img-wrap:hover .zoom-hint svg{opacity:.7}
-
-/* LIGHTBOX */
-#lb{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.88);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out}
-#lb img{max-width:92%;max-height:92vh;border-radius:4px;box-shadow:0 4px 32px rgba(0,0,0,.6)}
-
-.site-footer{background:var(--bg-footer);color:rgba(255,255,255,.4);padding:2.5rem 2rem;text-align:center;margin-top:4rem}
-.footer-logo{font-family:var(--heading);font-size:1rem;color:rgba(255,255,255,.75);margin-bottom:.5rem;font-weight:600}
-.footer-copy{font-family:var(--mono);font-size:.5rem;letter-spacing:.1em;text-transform:uppercase}
-
-@media(max-width:900px){:root{--content:100%}.art-hdr,.art-body{padding-left:1.5rem;padding-right:1.5rem}}
-@media(max-width:640px){html{font-size:17px}.header-inner{padding:0 1.2rem}.art-hdr,.art-body{padding-left:1.2rem;padding-right:1.2rem}.site-nav .hide-mob{display:none}table.notow{font-size:.72rem}}
-
-/* METAL BADGES */
-/* METAL TOOLTIP */
-.metal{position:relative}
-.metal::after{
-  content:attr(data-tip);
-  position:absolute;bottom:calc(100% + 5px);left:50%;
-  transform:translateX(-50%);
-  background:#1a1a18;color:#fff;
-  font-family:var(--mono,'DM Mono',monospace);
-  font-size:.42rem;letter-spacing:.06em;white-space:nowrap;
-  padding:3px 7px;border-radius:3px;
-  font-weight:400;pointer-events:none;opacity:0;transition:opacity .15s;
-  z-index:999;
-}
-.metal:hover::after{opacity:1}
-
-.metal{font-family:var(--mono);font-size:.46rem;font-weight:700;letter-spacing:.05em;
-  border-radius:3px;padding:2px 6px;display:inline-block;margin-left:7px;
-  border:1px solid transparent;vertical-align:middle;}
-.metal-Al{background:#A8AAAD;color:#1a1a1a;border-color:#888}
-.metal-CuNi{background:#78828C;color:#fff;border-color:#566}
-.metal-B{background:#A0522D;color:#fff;border-color:#7a3a1a}
-.metal-M{background:#B5942A;color:#1a1000;border-color:#8a6e18}
-.metal-Cu{background:#B87333;color:#fff;border-color:#8a5520}
-.metal-Ag{background:#C0C0C0;color:#1a1a1a;border-color:#999}
-.metal-Au{background:#D4AF37;color:#2a1a00;border-color:#a8880f}
-
-/* COLLAPSIBLE OLDER UPDATES */
-.updates-older{margin-top:.4rem}
-.updates-older summary{
-  font-family:var(--mono);font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--green);cursor:pointer;user-select:none;
-  padding:.35rem 0;display:inline-flex;align-items:center;gap:.4rem;
-  list-style:none;
-}
-.updates-older summary::-webkit-details-marker{display:none}
-.updates-older summary::before{
-  content:'▶';font-size:.5rem;transition:transform .2s;display:inline-block;
-}
-.updates-older[open] summary::before{transform:rotate(90deg)}
-.updates-older summary:hover{opacity:.75}
-.update-box ul{margin:.2rem 0 0 1.1rem;padding:0}
-.update-box ul li{font-size:.88rem;line-height:1.6;color:var(--text)}
-
-/* CONTEXT / EDUCATION BOX */
-.context-box{
-  background:#fffdf5;
-  border:1px solid #e8dfc0;
-  border-left:4px solid var(--gold,#9a7020);
-  border-radius:0 6px 6px 0;
-  padding:1rem 1.2rem;
-  margin-bottom:1.6rem;
-  font-family:var(--serif);
-  font-size:.9rem;
-  line-height:1.75;
-  color:var(--text);
-}
-.context-box p+p{margin-top:.6rem}
-.hint-box{font-family:var(--mono);font-size:.62rem;letter-spacing:.03em;color:#5a4a10;background:#fffbe6;border:1px solid #e8d878;border-left:3px solid #c8b840;border-radius:0 4px 4px 0;padding:.55rem .9rem;margin-bottom:1.4rem;line-height:1.6}
-.UNUSED{
-  font-size:.78rem;
-  font-family:var(--mono);
-  color:var(--text-dim);
-  margin-top:.8rem;
-  padding-top:.7rem;
-  border-top:1px solid #e8dfc0;
-  letter-spacing:.02em;
-}
-.art-body p.drop-cap::first-letter{font-family:var(--heading);font-size:3.5rem;font-weight:700;line-height:.82;float:left;margin:.06em .12em 0 0;color:var(--green)}
-</style>
+<link rel="stylesheet" href="/coinage-blog/css/base.css">
+<link rel="stylesheet" href="/coinage-blog/css/article.css">
+<!-- Analytics: uncomment after GoatCounter setup
+<script data-goatcounter="https://TWOJA-NAZWA.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+-->
 </head>
 <body>
 
@@ -272,10 +112,10 @@ table.notow tr.withdrawn td{opacity:.5}
         <td class="tx-num">F2G-1A</td>
         <td class="date-cell">2019-03-17</td>
         <td><div class="coin-imgs"><div class="img-wrap">
-            <img src="img/F2G-1A_R.jpg" alt="F2G-1A R" class="coin-img" onclick="showLb('img/F2G-1A_R.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F2G-1A_R.jpg" alt="F2G-1A R" class="coin-img" onclick="showLb('img/F2G-1A_R.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F2G-1A_R.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div><div class="img-wrap">
-            <img src="img/F2G-1A_A.jpg" alt="F2G-1A A" class="coin-img" onclick="showLb('img/F2G-1A_A.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F2G-1A_A.jpg" alt="F2G-1A A" class="coin-img" onclick="showLb('img/F2G-1A_A.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F2G-1A_A.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div></div></td>
         <td class="weight-cell">0,57g</td>
@@ -287,10 +127,10 @@ table.notow tr.withdrawn td{opacity:.5}
         <td class="tx-num">F2G-1B</td>
         <td class="date-cell">2020-11-07</td>
         <td><div class="coin-imgs"><div class="img-wrap">
-            <img src="img/F2G-1B_R.jpg" alt="F2G-1B R" class="coin-img" onclick="showLb('img/F2G-1B_R.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F2G-1B_R.jpg" alt="F2G-1B R" class="coin-img" onclick="showLb('img/F2G-1B_R.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F2G-1B_R.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div><div class="img-wrap">
-            <img src="img/F2G-1B_A.jpg" alt="F2G-1B A" class="coin-img" onclick="showLb('img/F2G-1B_A.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F2G-1B_A.jpg" alt="F2G-1B A" class="coin-img" onclick="showLb('img/F2G-1B_A.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F2G-1B_A.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div></div></td>
         <td class="weight-cell">?</td>
@@ -302,10 +142,10 @@ table.notow tr.withdrawn td{opacity:.5}
         <td class="tx-num">F2G-1C</td>
         <td class="date-cell">2021-10-24</td>
         <td><div class="coin-imgs"><div class="img-wrap">
-            <img src="img/F2G-1C_R.jpg" alt="F2G-1C R" class="coin-img" onclick="showLb('img/F2G-1C_R.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F2G-1C_R.jpg" alt="F2G-1C R" class="coin-img" onclick="showLb('img/F2G-1C_R.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F2G-1C_R.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div><div class="img-wrap">
-            <img src="img/F2G-1C_A.jpg" alt="F2G-1C A" class="coin-img" onclick="showLb('img/F2G-1C_A.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F2G-1C_A.jpg" alt="F2G-1C A" class="coin-img" onclick="showLb('img/F2G-1C_A.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F2G-1C_A.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div></div></td>
         <td class="weight-cell">?</td>
@@ -316,7 +156,7 @@ table.notow tr.withdrawn td{opacity:.5}
       <tr class="withdrawn">
         <td class="tx-num">F2G-1D</td>
         <td class="date-cell">2025-10-09</td>
-        <td><div class="coin-imgs"><div class="img-wrap"><img src="img/F2G-1D_R.jpg" alt="F2G-1D R" class="coin-img" onclick="showLb('img/F2G-1D_R.jpg')" style="cursor:zoom-in" /><span class="zoom-hint" onclick="showLb('img/F2G-1D_R.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span></div><div class="img-wrap"><img src="img/F2G-1D_A.jpg" alt="F2G-1D A" class="coin-img" onclick="showLb('img/F2G-1D_A.jpg')" style="cursor:zoom-in" /><span class="zoom-hint" onclick="showLb('img/F2G-1D_A.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span></div></div></td>
+        <td><div class="coin-imgs"><div class="img-wrap"><img loading="lazy" src="img/F2G-1D_R.jpg" alt="F2G-1D R" class="coin-img" onclick="showLb('img/F2G-1D_R.jpg')" style="cursor:zoom-in" /><span class="zoom-hint" onclick="showLb('img/F2G-1D_R.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span></div><div class="img-wrap"><img loading="lazy" src="img/F2G-1D_A.jpg" alt="F2G-1D A" class="coin-img" onclick="showLb('img/F2G-1D_A.jpg')" style="cursor:zoom-in" /><span class="zoom-hint" onclick="showLb('img/F2G-1D_A.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span></div></div></td>
         <td class="weight-cell">?</td>
         <td class="price-cell"><span class="price-val">N/A</span><br><span class="tag-wycofana">Wycofana</span></td>
         <td class="note-cell">Wycofana po interwencji.</td>
@@ -350,10 +190,10 @@ table.notow tr.withdrawn td{opacity:.5}
         <td class="tx-num">F5G-1A</td>
         <td class="date-cell">2024-03-17</td>
         <td><div class="coin-imgs"><div class="img-wrap">
-            <img src="img/F5G-1A_R.jpg" alt="F5G-1A R" class="coin-img" onclick="showLb('img/F5G-1A_R.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F5G-1A_R.jpg" alt="F5G-1A R" class="coin-img" onclick="showLb('img/F5G-1A_R.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F5G-1A_R.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div><div class="img-wrap">
-            <img src="img/F5G-1A_A.jpg" alt="F5G-1A A" class="coin-img" onclick="showLb('img/F5G-1A_A.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F5G-1A_A.jpg" alt="F5G-1A A" class="coin-img" onclick="showLb('img/F5G-1A_A.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F5G-1A_A.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div></div></td>
         <td class="weight-cell">1,02g</td>
@@ -368,10 +208,10 @@ table.notow tr.withdrawn td{opacity:.5}
         <td class="tx-num">F5G-2A</td>
         <td class="date-cell">2024-03-17</td>
         <td><div class="coin-imgs"><div class="img-wrap">
-            <img src="img/F5G-2A_R.jpg" alt="F5G-2A R" class="coin-img" onclick="showLb('img/F5G-2A_R.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F5G-2A_R.jpg" alt="F5G-2A R" class="coin-img" onclick="showLb('img/F5G-2A_R.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F5G-2A_R.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div><div class="img-wrap">
-            <img src="img/F5G-2A_A.jpg" alt="F5G-2A A" class="coin-img" onclick="showLb('img/F5G-2A_A.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F5G-2A_A.jpg" alt="F5G-2A A" class="coin-img" onclick="showLb('img/F5G-2A_A.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F5G-2A_A.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div></div></td>
         <td class="weight-cell">3,03g</td>
@@ -407,10 +247,10 @@ table.notow tr.withdrawn td{opacity:.5}
         <td class="tx-num">F10G-1A</td>
         <td class="date-cell">2016-02-16</td>
         <td><div class="coin-imgs"><div class="img-wrap">
-            <img src="img/F10G-1A_R.jpg" alt="F10G-1A R" class="coin-img" onclick="showLb('img/F10G-1A_R.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F10G-1A_R.jpg" alt="F10G-1A R" class="coin-img" onclick="showLb('img/F10G-1A_R.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F10G-1A_R.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div><div class="img-wrap">
-            <img src="img/F10G-1A_A.jpg" alt="F10G-1A A" class="coin-img" onclick="showLb('img/F10G-1A_A.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F10G-1A_A.jpg" alt="F10G-1A A" class="coin-img" onclick="showLb('img/F10G-1A_A.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F10G-1A_A.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div></div></td>
         <td class="weight-cell">?</td>
@@ -425,10 +265,10 @@ table.notow tr.withdrawn td{opacity:.5}
         <td class="tx-num">F10G-2A</td>
         <td class="date-cell">2018-05-27</td>
         <td><div class="coin-imgs"><div class="img-wrap">
-            <img src="img/F10G-2A_R.jpg" alt="F10G-2A R" class="coin-img" onclick="showLb('img/F10G-2A_R.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F10G-2A_R.jpg" alt="F10G-2A R" class="coin-img" onclick="showLb('img/F10G-2A_R.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F10G-2A_R.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div><div class="img-wrap">
-            <img src="img/F10G-2A_A.jpg" alt="F10G-2A A" class="coin-img" onclick="showLb('img/F10G-2A_A.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F10G-2A_A.jpg" alt="F10G-2A A" class="coin-img" onclick="showLb('img/F10G-2A_A.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F10G-2A_A.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div></div></td>
         <td class="weight-cell">1,06g</td>
@@ -443,10 +283,10 @@ table.notow tr.withdrawn td{opacity:.5}
         <td class="tx-num">F10G-3A</td>
         <td class="date-cell">2019-03-17</td>
         <td><div class="coin-imgs"><div class="img-wrap">
-            <img src="img/F10G-3A_R.jpg" alt="F10G-3A R" class="coin-img" onclick="showLb('img/F10G-3A_R.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F10G-3A_R.jpg" alt="F10G-3A R" class="coin-img" onclick="showLb('img/F10G-3A_R.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F10G-3A_R.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div><div class="img-wrap">
-            <img src="img/F10G-3A_A.jpg" alt="F10G-3A A" class="coin-img" onclick="showLb('img/F10G-3A_A.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F10G-3A_A.jpg" alt="F10G-3A A" class="coin-img" onclick="showLb('img/F10G-3A_A.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F10G-3A_A.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div></div></td>
         <td class="weight-cell">2,11g</td>
@@ -482,10 +322,10 @@ table.notow tr.withdrawn td{opacity:.5}
         <td class="tx-num">F20G-1A</td>
         <td class="date-cell">2019-02-17</td>
         <td><div class="coin-imgs"><div class="img-wrap">
-            <img src="img/F20G-1A_R.jpg" alt="F20G-1A R" class="coin-img" onclick="showLb('img/F20G-1A_R.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F20G-1A_R.jpg" alt="F20G-1A R" class="coin-img" onclick="showLb('img/F20G-1A_R.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F20G-1A_R.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div><div class="img-wrap">
-            <img src="img/F20G-1A_A.jpg" alt="F20G-1A A" class="coin-img" onclick="showLb('img/F20G-1A_A.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F20G-1A_A.jpg" alt="F20G-1A A" class="coin-img" onclick="showLb('img/F20G-1A_A.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F20G-1A_A.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div></div></td>
         <td class="weight-cell">3,15g</td>
@@ -497,10 +337,10 @@ table.notow tr.withdrawn td{opacity:.5}
         <td class="tx-num">F20G-1B</td>
         <td class="date-cell">2020-12-13</td>
         <td><div class="coin-imgs"><div class="img-wrap">
-            <img src="img/F20G-1B_R.jpg" alt="F20G-1B R" class="coin-img" onclick="showLb('img/F20G-1B_R.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F20G-1B_R.jpg" alt="F20G-1B R" class="coin-img" onclick="showLb('img/F20G-1B_R.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F20G-1B_R.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div><div class="img-wrap">
-            <img src="img/F20G-1B_A.jpg" alt="F20G-1B A" class="coin-img" onclick="showLb('img/F20G-1B_A.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F20G-1B_A.jpg" alt="F20G-1B A" class="coin-img" onclick="showLb('img/F20G-1B_A.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F20G-1B_A.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div></div></td>
         <td class="weight-cell">2,91g</td>
@@ -512,10 +352,10 @@ table.notow tr.withdrawn td{opacity:.5}
         <td class="tx-num">F20G-1C</td>
         <td class="date-cell">2024-12-15</td>
         <td><div class="coin-imgs"><div class="img-wrap">
-            <img src="img/F20G-1C_R.jpg" alt="F20G-1C R" class="coin-img" onclick="showLb('img/F20G-1C_R.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F20G-1C_R.jpg" alt="F20G-1C R" class="coin-img" onclick="showLb('img/F20G-1C_R.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F20G-1C_R.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div><div class="img-wrap">
-            <img src="img/F20G-1C_A.jpg" alt="F20G-1C A" class="coin-img" onclick="showLb('img/F20G-1C_A.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F20G-1C_A.jpg" alt="F20G-1C A" class="coin-img" onclick="showLb('img/F20G-1C_A.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F20G-1C_A.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div></div></td>
         <td class="weight-cell">2,91g</td>
@@ -527,10 +367,10 @@ table.notow tr.withdrawn td{opacity:.5}
         <td class="tx-num">F20G-1D</td>
         <td class="date-cell">2025-05-11</td>
         <td><div class="coin-imgs"><div class="img-wrap">
-            <img src="img/F20G-1D_R.jpg" alt="F20G-1D R" class="coin-img" onclick="showLb('img/F20G-1D_R.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F20G-1D_R.jpg" alt="F20G-1D R" class="coin-img" onclick="showLb('img/F20G-1D_R.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F20G-1D_R.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div><div class="img-wrap">
-            <img src="img/F20G-1D_A.jpg" alt="F20G-1D A" class="coin-img" onclick="showLb('img/F20G-1D_A.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F20G-1D_A.jpg" alt="F20G-1D A" class="coin-img" onclick="showLb('img/F20G-1D_A.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F20G-1D_A.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div></div></td>
         <td class="weight-cell">?</td>
@@ -545,10 +385,10 @@ table.notow tr.withdrawn td{opacity:.5}
         <td class="tx-num">F20G-2A</td>
         <td class="date-cell">2019-03-17</td>
         <td><div class="coin-imgs"><div class="img-wrap">
-            <img src="img/F20G-2A_R.jpg" alt="F20G-2A R" class="coin-img" onclick="showLb('img/F20G-2A_R.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F20G-2A_R.jpg" alt="F20G-2A R" class="coin-img" onclick="showLb('img/F20G-2A_R.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F20G-2A_R.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div><div class="img-wrap">
-            <img src="img/F20G-2A_A.jpg" alt="F20G-2A A" class="coin-img" onclick="showLb('img/F20G-2A_A.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F20G-2A_A.jpg" alt="F20G-2A A" class="coin-img" onclick="showLb('img/F20G-2A_A.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F20G-2A_A.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div></div></td>
         <td class="weight-cell">3,02g</td>
@@ -560,10 +400,10 @@ table.notow tr.withdrawn td{opacity:.5}
         <td class="tx-num">F20G-2B</td>
         <td class="date-cell">2022-12-11</td>
         <td><div class="coin-imgs"><div class="img-wrap">
-            <img src="img/F20G-2B_R.jpg" alt="F20G-2B R" class="coin-img" onclick="showLb('img/F20G-2B_R.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F20G-2B_R.jpg" alt="F20G-2B R" class="coin-img" onclick="showLb('img/F20G-2B_R.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F20G-2B_R.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div><div class="img-wrap">
-            <img src="img/F20G-2B_A.jpg" alt="F20G-2B A" class="coin-img" onclick="showLb('img/F20G-2B_A.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F20G-2B_A.jpg" alt="F20G-2B A" class="coin-img" onclick="showLb('img/F20G-2B_A.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F20G-2B_A.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div></div></td>
         <td class="weight-cell">2,91g</td>
@@ -575,10 +415,10 @@ table.notow tr.withdrawn td{opacity:.5}
         <td class="tx-num">F20G-2C</td>
         <td class="date-cell">2024-03-09</td>
         <td><div class="coin-imgs"><div class="img-wrap">
-            <img src="img/F20G-2C_R.jpg" alt="F20G-2C R" class="coin-img" onclick="showLb('img/F20G-2C_R.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F20G-2C_R.jpg" alt="F20G-2C R" class="coin-img" onclick="showLb('img/F20G-2C_R.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F20G-2C_R.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div><div class="img-wrap">
-            <img src="img/F20G-2C_A.jpg" alt="F20G-2C A" class="coin-img" onclick="showLb('img/F20G-2C_A.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F20G-2C_A.jpg" alt="F20G-2C A" class="coin-img" onclick="showLb('img/F20G-2C_A.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F20G-2C_A.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div></div></td>
         <td class="weight-cell">3,03g</td>
@@ -589,7 +429,7 @@ table.notow tr.withdrawn td{opacity:.5}
       <tr>
         <td class="tx-num">F20G-2D</td>
         <td class="date-cell">2026-03-15</td>
-        <td><div class="coin-imgs"><div class="img-wrap"><img src="img/F20G-2D_R.jpg" alt="F20G-2D R" class="coin-img" onclick="showLb('img/F20G-2D_R.jpg')" style="cursor:zoom-in" /><span class="zoom-hint" onclick="showLb('img/F20G-2D_R.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span></div><div class="img-wrap"><img src="img/F20G-2D_A.jpg" alt="F20G-2D A" class="coin-img" onclick="showLb('img/F20G-2D_A.jpg')" style="cursor:zoom-in" /><span class="zoom-hint" onclick="showLb('img/F20G-2D_A.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span></div></div></td>
+        <td><div class="coin-imgs"><div class="img-wrap"><img loading="lazy" src="img/F20G-2D_R.jpg" alt="F20G-2D R" class="coin-img" onclick="showLb('img/F20G-2D_R.jpg')" style="cursor:zoom-in" /><span class="zoom-hint" onclick="showLb('img/F20G-2D_R.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span></div><div class="img-wrap"><img loading="lazy" src="img/F20G-2D_A.jpg" alt="F20G-2D A" class="coin-img" onclick="showLb('img/F20G-2D_A.jpg')" style="cursor:zoom-in" /><span class="zoom-hint" onclick="showLb('img/F20G-2D_A.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span></div></div></td>
         <td class="weight-cell">?</td>
         <td class="price-cell"><span class="price-val">336</span></td>
         <td class="note-cell">Po interwencji dodano opis: „Na rewersie wklęsły napis PRÓBA dobity w epoce." 😉</td>
@@ -602,10 +442,10 @@ table.notow tr.withdrawn td{opacity:.5}
         <td class="tx-num">F20G-3A</td>
         <td class="date-cell">2024-03-17</td>
         <td><div class="coin-imgs"><div class="img-wrap">
-            <img src="img/F20G-3A_R.jpg" alt="F20G-3A R" class="coin-img" onclick="showLb('img/F20G-3A_R.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F20G-3A_R.jpg" alt="F20G-3A R" class="coin-img" onclick="showLb('img/F20G-3A_R.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F20G-3A_R.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div><div class="img-wrap">
-            <img src="img/F20G-3A_A.jpg" alt="F20G-3A A" class="coin-img" onclick="showLb('img/F20G-3A_A.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F20G-3A_A.jpg" alt="F20G-3A A" class="coin-img" onclick="showLb('img/F20G-3A_A.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F20G-3A_A.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div></div></td>
         <td class="weight-cell">2,98g</td>
@@ -641,10 +481,10 @@ table.notow tr.withdrawn td{opacity:.5}
         <td class="tx-num">F1Z-1A</td>
         <td class="date-cell">2018-05-27</td>
         <td><div class="coin-imgs"><div class="img-wrap">
-            <img src="img/F1Z-1A_R.jpg" alt="F1Z-1A R" class="coin-img" onclick="showLb('img/F1Z-1A_R.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F1Z-1A_R.jpg" alt="F1Z-1A R" class="coin-img" onclick="showLb('img/F1Z-1A_R.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F1Z-1A_R.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div><div class="img-wrap">
-            <img src="img/F1Z-1A_A.jpg" alt="F1Z-1A A" class="coin-img" onclick="showLb('img/F1Z-1A_A.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F1Z-1A_A.jpg" alt="F1Z-1A A" class="coin-img" onclick="showLb('img/F1Z-1A_A.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F1Z-1A_A.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div></div></td>
         <td class="weight-cell">2,13g</td>
@@ -659,10 +499,10 @@ table.notow tr.withdrawn td{opacity:.5}
         <td class="tx-num">F1Z-2A</td>
         <td class="date-cell">2024-03-17</td>
         <td><div class="coin-imgs"><div class="img-wrap">
-            <img src="img/F1Z-2A_R.jpg" alt="F1Z-2A R" class="coin-img" onclick="showLb('img/F1Z-2A_R.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F1Z-2A_R.jpg" alt="F1Z-2A R" class="coin-img" onclick="showLb('img/F1Z-2A_R.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F1Z-2A_R.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div><div class="img-wrap">
-            <img src="img/F1Z-2A_A.jpg" alt="F1Z-2A A" class="coin-img" onclick="showLb('img/F1Z-2A_A.jpg')" style="cursor:zoom-in" />
+            <img loading="lazy" src="img/F1Z-2A_A.jpg" alt="F1Z-2A A" class="coin-img" onclick="showLb('img/F1Z-2A_A.jpg')" style="cursor:zoom-in" />
             <span class="zoom-hint" onclick="showLb('img/F1Z-2A_A.jpg')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
           </div></div></td>
         <td class="weight-cell">2,09g</td>

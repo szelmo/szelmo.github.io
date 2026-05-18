@@ -3,258 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Co Wy tam gradujecie... — Coinage.pl</title>
+<title>Co Wy tam gradujecie… — Coinage</title>
+<meta name="description" content="O tym jak grading monet może służyć jako narzędzie badawcze — dokumentując istnienie rzadkich prób PRL w kolekcjach prywatnych.">
+<link rel="canonical" href="https://szelmo.github.io/coinage-blog/2025-12-29-co-wy-tam-gradujecie/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=DM+Mono:wght@400&display=swap');
-
-:root {
-  --bg:         #ffffff;
-  --bg-stripe:  #f7f7f5;
-  --bg-tag:     #eef6f1;
-  --bg-quote:   #f4faf7;
-  --bg-footer:  #1a1a18;
-  --text:       #111111;
-  --text-dim:   #444444;
-  --text-faint: #888888;
-  --green:      #2d5a3d;
-  --green2:     #3d7a53;
-  --green-bdr:  #b8d8c4;
-  --gold:       #9a7020;
-  --red:        #8b2318;
-  --rule:       #e0e0dc;
-  --serif:      'Source Serif 4', Georgia, serif;
-  --heading:    'Lora', Georgia, serif;
-  --mono:       'DM Mono', monospace;
-  --content:    860px;
-  --wide:       1100px;
-}
-
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{font-size:19px}
-body{background:var(--bg);color:var(--text);font-family:var(--serif);font-weight:400;line-height:1.78;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-img{max-width:100%;height:auto;display:block}
-a{color:var(--green)}
-a:hover{text-decoration:underline}
-
-
-/* Wyróżnione frazy */
-.key-phrase{font-weight:700;color:var(--text)}   /* bold, normalny kolor — nie krzykliwy */
-.key-italic{font-style:italic}                    /* dodatkowy italic w kontekście */
-
-
-/* Side-komentarz */
-.side-note{
-  display:block;
-  font-size:.82rem;
-  color:var(--text-dim);
-  font-style:italic;
-  margin-top:.2rem;
-  padding-left:1rem;
-  border-left:2px solid var(--rule);
-  line-height:1.6;
-}
-/* NAV */
-.site-header{background:#fff;border-bottom:2px solid var(--green);position:sticky;top:0;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.header-inner{max-width:var(--wide);margin:0 auto;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo-text{display:flex;flex-direction:column;align-items:center}
-.logo-name{font-family:var(--heading);font-size:1.2rem;font-weight:700;color:var(--green);line-height:1}
-.logo-sub{font-family:var(--mono);font-size:.45rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-faint);margin-top:3px}
-.site-nav{display:flex;gap:2rem}
-.site-nav a{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);text-decoration:none}
-.site-nav a:hover{color:var(--green)}
-
-/* ARTICLE HEADER */
-.art-hdr{border-bottom:1px solid var(--rule);padding:3rem 2rem 2rem}
-.art-hdr-inner{max-width:var(--content);margin:0 auto}
-.art-cats{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-top:.9rem}
-.art-cats-label{font-family:var(--mono);font-size:.46rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-faint);margin-right:.1rem}
-.art-cat{font-family:var(--mono);font-size:.46rem;letter-spacing:.12em;text-transform:uppercase;background:#e8f4ee;color:#1d4a2e;border:1px solid #8fc4a4;padding:.22rem .65rem;border-radius:3px;font-weight:500;cursor:pointer;text-decoration:none;transition:background .15s}
-.art-cat:hover{background:#c8e8d8;text-decoration:none}
-h1.art-title{font-family:var(--heading);font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:700;color:var(--text);line-height:1.18;letter-spacing:-.015em;margin-bottom:.6rem}
-.art-meta{font-family:var(--mono);font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint);display:flex;gap:.8rem;align-items:center}
-.art-intro-sub{font-size:1.05rem;font-style:italic;color:var(--text-dim);margin-bottom:.9rem}
-.art-meta::before{content:'';display:inline-block;width:24px;height:2px;background:var(--green)}
-
-/* HERO — constrained width */
-.hero-wrap{max-width:var(--content);margin:1.8rem auto 0;padding:0 2rem}
-.hero-wrap img{width:100%;max-height:360px;object-fit:cover;border-radius:4px}
-
-/* BODY */
-.art-body{max-width:var(--content);margin:2rem auto 5rem;padding:0 2rem}
-
-/* Paragraphs — justified, tight spacing */
-.art-body p{margin-bottom:.85rem;font-size:1rem;color:var(--text);text-align:justify;hyphens:auto;-webkit-hyphens:auto}
-
-/* Drop cap — first letter of marked paragraphs */
-.art-body p.drop-cap::first-letter{
-  font-family:var(--heading);
-  font-size:3.5rem;font-weight:700;
-  line-height:.82;
-  float:left;
-  margin:.06em .12em 0 0;
-  color:var(--green);
-}
-
-/* Section hr — 60% wide, centred, no extra margin */
-hr.section-hr{
-  border:none;
-  border-top:1px solid var(--rule);
-  width:60%;
-  margin:1.4rem auto 1.4rem;
-}
-
-.art-body ul,.art-body ol{margin:0 0 .85rem 1.5rem;font-size:1rem;color:var(--text)}
-.art-body li{margin-bottom:.3rem}
-.art-body strong{font-weight:700;color:var(--text)}
-.art-body em{font-style:italic}
-.art-body a{color:var(--green)}
-.art-body hr:not(.section-hr){border:none;border-top:1px solid var(--rule);margin:2rem 0}
-.art-body h2{font-family:var(--heading);font-size:1.22rem;font-weight:700;color:var(--text);margin:2.5rem 0 .7rem;padding-bottom:.5rem;border-bottom:2px solid var(--green-bdr)}
-.art-body h3{font-family:var(--heading);font-size:1.05rem;font-weight:600;color:var(--text);margin:1.8rem 0 .5rem}
-.art-body blockquote{border-left:3px solid var(--green);padding:.6rem 0 .6rem 1.3rem;margin:1.4rem 0;font-style:italic;color:var(--text-dim);background:var(--bg-quote);border-radius:0 4px 4px 0}
-.art-body .article-img{border:1px solid var(--rule);border-radius:3px;margin:1rem 0}
-
-/* NGC CARDS */
-.ngc-card{margin:0;border:1px solid var(--rule);border-radius:5px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-
-/* Card header — dark green, coin title + catalogue line */
-.ngc-card-header{background:var(--green);padding:.75rem 1.1rem}
-.ngc-coin-title{font-family:var(--heading);font-size:1rem;font-weight:700;color:#fff;letter-spacing:.01em;line-height:1.3}
-.ngc-catnum{
-  font-family:var(--mono);
-  font-size:.55rem;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,.7);
-  margin-top:.35rem;
-  display:flex;
-  align-items:baseline;
-  gap:.4rem;
-}
-.ngc-catnum-val{
-  font-family:var(--mono);
-  font-size:.7rem;           /* bigger */
-  font-weight:700;           /* bold */
-  color:#f0e080;             /* gold-yellow — stands out from prefix */
-  letter-spacing:.06em;
-}
-.ngc-metal{
-  font-style:normal;
-  font-family:var(--mono);
-  font-size:.58rem;
-  text-transform:uppercase;
-  letter-spacing:.06em;
-  color:rgba(255,255,255,.85);
-  margin-left:.4em;
-}
-
-/* Photo — no border, no box */
-.ngc-photo-wrap{
-  padding:.9rem 1.1rem;
-  border-top:1px solid var(--rule);
-  text-align:center;
-  background:#fff;
-}
-.ngc-photo-wrap img{
-  max-height:300px;
-  width:auto;
-  margin:0 auto;
-  /* ← no border, no radius — as requested */
-}
-.ngc-src{font-family:var(--serif);font-size:.7rem;font-style:italic;color:var(--text-faint);margin-top:.5rem;text-align:center}
-
-/* Description cell — nowy układ */
-.ngc-desc{padding:0;border-top:1px solid var(--rule);background:#fff}
-
-/* Wiersz NGC */
-.ngc-row-ngc{
-  padding:.65rem 1.1rem;
-  border-bottom:1px solid var(--rule);
-  font-family:var(--serif);font-size:.88rem;color:var(--text);
-  font-style:italic;line-height:1.6;
-}
-.ngc-row-ngc a{color:var(--green)}
-.ngc-row-ngc strong{font-style:normal;font-weight:600}
-
-/* Numer certyfikatu NGC */
-.ngc-cert{font-family:var(--mono);font-size:.78rem;font-style:normal;color:var(--text-dim)}
-
-/* Nota gradingowa — dyskretnie wyróżniona */
-
-/* Komentarz autora */
-.ngc-row-comment{
-  padding:.55rem 1.1rem;
-  border-bottom:1px solid var(--rule);
-  font-family:var(--serif);font-size:.88rem;
-  color:var(--text-dim);font-style:italic;
-  line-height:1.6;
-  background:#fafaf8;
-}
-.ngc-row-comment::before{
-  content:"✎ ";
-  font-style:normal;color:var(--text-faint);
-}
-
-/* Nakład w belce tytułowej */
-.ngc-naklad-inline{
-  margin-left:auto;
-  display:flex;align-items:baseline;gap:.35rem;flex-wrap:nowrap;
-}
-.ngc-naklad-label{
-  font-family:var(--mono);font-size:.48rem;
-  letter-spacing:.12em;text-transform:uppercase;
-  color:rgba(255,255,255,.55);
-}
-.ngc-naklad-items{display:flex;gap:.3rem;align-items:baseline;flex-wrap:nowrap}
-.ngc-naklad-block{
-  font-family:var(--mono);font-size:.52rem;
-  color:rgba(255,255,255,.65);letter-spacing:.04em;
-}
-.ngc-naklad-val{
-  font-family:var(--mono);font-size:.75rem;
-  font-weight:700;color:#f0e080;  /* żółty jak nr katalogowy */
-  letter-spacing:.03em;
-}
-
-/* Grade badge */
-.ngc-grade-badge{display:inline-block;font-family:var(--mono);font-size:.68rem;font-style:normal;background:var(--green);color:#fff;padding:.18rem .6rem;border-radius:3px;letter-spacing:.04em;margin:0 .1em}
-
-/* Fid */
-.fid{display:inline-block;font-family:var(--mono);font-size:.58rem;letter-spacing:.06em;padding:.15rem .55rem;border-radius:2px;border:1.5px solid currentColor}
-.fid-red{color:var(--red)}
-
-/* FOOTER */
-.site-footer{background:var(--bg-footer);color:rgba(255,255,255,.4);padding:2.5rem 2rem;text-align:center;margin-top:4rem}
-.footer-logo{font-family:var(--heading);font-size:1rem;color:rgba(255,255,255,.75);margin-bottom:.5rem;font-weight:600}
-.footer-copy{font-family:var(--mono);font-size:.5rem;letter-spacing:.1em;text-transform:uppercase}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-  :root{--content:100%}
-  .art-hdr{padding:2.5rem 1.5rem 1.8rem}
-  .art-body{padding:0 1.5rem;margin-top:1.8rem}
-  .hero-wrap{padding:0 1.5rem}
-}
-@media(max-width:640px){
-  html{font-size:18px}
-  .header-inner{padding:0 1.2rem}
-  .art-hdr{padding:2rem 1.2rem 1.5rem}
-  .art-body{padding:0 1.2rem}
-  .hero-wrap{padding:0 1.2rem}
-  h1.art-title{font-size:1.6rem}
-  .site-nav .hide-mob{display:none}
-  .art-body p.drop-cap::first-letter{font-size:2.8rem}
-}
-@media(max-width:400px){html{font-size:17px}}
-
-/* ZOOM HINT */
-.zoom-hint{display:block;text-align:right;margin-top:3px;line-height:1;}
-.zoom-hint svg{width:14px;height:14px;opacity:.35;transition:opacity .15s;vertical-align:middle;}
-.zoom-hint:hover svg{opacity:.75}
-</style>
+<link rel="stylesheet" href="/coinage-blog/css/base.css">
+<link rel="stylesheet" href="/coinage-blog/css/article.css">
+<!-- Analytics: uncomment after GoatCounter setup
+<script data-goatcounter="https://TWOJA-NAZWA.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+-->
 </head>
 <body>
 
@@ -299,7 +59,7 @@ hr.section-hr{
     </div>
   </div>
 
-  <div class="hero-wrap"><img src="img/title-3.png" alt="Monety próbne PRL — baner artykułu" /></div>
+  <div class="hero-wrap"><img loading="lazy" src="img/title-3.png" alt="Monety próbne PRL — baner artykułu" /></div>
 
   <div class="art-body">
     <br>
@@ -309,7 +69,7 @@ hr.section-hr{
     <div class="ngc-catnum">NR KATALOGOWY: <span class="ngc-catnum-val">P538.b</span> <span class="ngc-metal">(PRÓBA W MIEDZIONIKLU)</span><span class="ngc-naklad-inline"><span class="ngc-naklad-label">Nakład:</span><span class="ngc-naklad-items"><span class="ngc-naklad-block"><span class="ngc-naklad-val">5</span> (NBP)</span><span style="color:rgba(255,255,255,.35)">,</span><span class="ngc-naklad-block"><span class="ngc-naklad-val">?</span> (MW)</span></span></span></div>
   </div>
   <div class="ngc-photo-wrap">
-    <img src="img/P538b.png" alt="20 złotych 1984 – próba w miedzioniklu" style="max-height:300px;width:auto;margin:0 auto;cursor:zoom-in;" onclick="document.getElementById('lightbox-p538b').style.display='flex'" />
+    <img loading="lazy" src="img/P538b.png" alt="20 złotych 1984 – próba w miedzioniklu" style="max-height:300px;width:auto;margin:0 auto;cursor:zoom-in;" onclick="document.getElementById('lightbox-p538b').style.display='flex'" />
           <span class="zoom-hint" onclick="document.getElementById('lightbox-p538b').style.display='flex'"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
     <div class="ngc-src">Źródło: <em>„Polskie Monety Próbne 1949 - 1990”</em> J. Parchimowicz, s.274</div>
   </div>
@@ -326,7 +86,7 @@ hr.section-hr{
     <div class="ngc-catnum">NR KATALOGOWY: <span class="ngc-catnum-val">P539</span> <span class="ngc-metal">(PRÓBA W SREBRZE)</span><span class="ngc-naklad-inline"><span class="ngc-naklad-label">Nakład:</span><span class="ngc-naklad-items"><span class="ngc-naklad-block"><span class="ngc-naklad-val">4</span> (NBP)</span><span style="color:rgba(255,255,255,.35)">,</span><span class="ngc-naklad-block"><span class="ngc-naklad-val">2</span> (MW)</span></span></span></div>
   </div>
   <div class="ngc-photo-wrap">
-    <img src="img/P539.png" alt="50 złotych 1972 Fryderyk Chopin – próba w srebrze" style="max-height:300px;width:auto;margin:0 auto;cursor:zoom-in;" onclick="document.getElementById('lightbox-chopin').style.display='flex'" />
+    <img loading="lazy" src="img/P539.png" alt="50 złotych 1972 Fryderyk Chopin – próba w srebrze" style="max-height:300px;width:auto;margin:0 auto;cursor:zoom-in;" onclick="document.getElementById('lightbox-chopin').style.display='flex'" />
           <span class="zoom-hint" onclick="document.getElementById('lightbox-chopin').style.display='flex'"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
     <div class="ngc-src">Źródło: <em>„Polskie Monety Próbne 1949 - 1990”</em> J. Parchimowicz, s.292</div>
   </div>
@@ -343,7 +103,7 @@ hr.section-hr{
     <div class="ngc-catnum">NR KATALOGOWY: <span class="ngc-catnum-val">P499.f</span> <span class="ngc-metal">(PRÓBA W ZŁOCIE)</span><span class="ngc-naklad-inline"><span class="ngc-naklad-label">Nakład:</span><span class="ngc-naklad-items"><span class="ngc-naklad-block"><span class="ngc-naklad-val">4</span> (NBP)</span><span style="color:rgba(255,255,255,.35)">,</span><span class="ngc-naklad-block"><span class="ngc-naklad-val">?</span> (MW)</span></span></span></div>
   </div>
   <div class="ngc-photo-wrap">
-    <img src="img/P499f.png" alt="2000 złotych 1977 Fryderyk Chopin – próba w złocie" style="max-height:300px;width:auto;margin:0 auto;cursor:zoom-in;" onclick="document.getElementById('lightbox-p499f').style.display='flex'" />
+    <img loading="lazy" src="img/P499f.png" alt="2000 złotych 1977 Fryderyk Chopin – próba w złocie" style="max-height:300px;width:auto;margin:0 auto;cursor:zoom-in;" onclick="document.getElementById('lightbox-p499f').style.display='flex'" />
           <span class="zoom-hint" onclick="document.getElementById('lightbox-p499f').style.display='flex'"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
     <div class="ngc-src">Źródło: <em>„Polskie Monety Próbne 1949 - 1990”</em> J. Parchimowicz, s.531</div>
   </div>
@@ -360,7 +120,7 @@ hr.section-hr{
     <div class="ngc-catnum">NR KATALOGOWY: <span class="ngc-catnum-val">P382.b</span> <span class="ngc-metal">(PRÓBA W SREBRZE)</span><span class="ngc-naklad-inline"><span class="ngc-naklad-label">Nakład:</span><span class="ngc-naklad-items"><span class="ngc-naklad-block"><span class="ngc-naklad-val">94</span> (NBP)</span><span style="color:rgba(255,255,255,.35)">,</span><span class="ngc-naklad-block"><span class="ngc-naklad-val">100</span> (MW)</span></span></span></div>
   </div>
   <div class="ngc-photo-wrap">
-    <img src="img/P382b.png" alt="100 ZŁOTYCH 1978: OCHRONA ŚRODOWISKA (BÓBR NA KONARZE)" style="max-height:300px;width:auto;margin:0 auto;cursor:zoom-in;" onclick="document.getElementById('lightbox-p382b').style.display='flex'" />
+    <img loading="lazy" src="img/P382b.png" alt="100 ZŁOTYCH 1978: OCHRONA ŚRODOWISKA (BÓBR NA KONARZE)" style="max-height:300px;width:auto;margin:0 auto;cursor:zoom-in;" onclick="document.getElementById('lightbox-p382b').style.display='flex'" />
           <span class="zoom-hint" onclick="document.getElementById('lightbox-p382b').style.display='flex'"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
     <div class="ngc-src">Źródło: <em>„Polskie Monety Próbne 1949 - 1990”</em> J. Parchimowicz, s.381</div>
   </div>
@@ -381,17 +141,17 @@ hr.section-hr{
 
 
 <div id="lightbox-chopin" class="coin-lightbox" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out;" onclick="this.style.display='none'">
-  <img src="img/P539.png" style="max-width:92%;max-height:92vh;border-radius:4px;box-shadow:0 4px 32px rgba(0,0,0,.6);" />
+  <img loading="lazy" src="img/P539.png" style="max-width:92%;max-height:92vh;border-radius:4px;box-shadow:0 4px 32px rgba(0,0,0,.6);" />
 </div>
 <!-- coin-lightboxes-injected -->
 <div id="lightbox-p538b" class="coin-lightbox" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out;" onclick="this.style.display='none'">
-  <img src="img/P538b.png" style="max-width:92%;max-height:92vh;border-radius:4px;box-shadow:0 4px 32px rgba(0,0,0,.6);" alt="" />
+  <img loading="lazy" src="img/P538b.png" style="max-width:92%;max-height:92vh;border-radius:4px;box-shadow:0 4px 32px rgba(0,0,0,.6);" alt="" />
 </div>
 <div id="lightbox-p499f" class="coin-lightbox" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out;" onclick="this.style.display='none'">
-  <img src="img/P499f.png" style="max-width:92%;max-height:92vh;border-radius:4px;box-shadow:0 4px 32px rgba(0,0,0,.6);" alt="" />
+  <img loading="lazy" src="img/P499f.png" style="max-width:92%;max-height:92vh;border-radius:4px;box-shadow:0 4px 32px rgba(0,0,0,.6);" alt="" />
 </div>
 <div id="lightbox-p382b" class="coin-lightbox" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out;" onclick="this.style.display='none'">
-  <img src="img/P382b.png" style="max-width:92%;max-height:92vh;border-radius:4px;box-shadow:0 4px 32px rgba(0,0,0,.6);" alt="" />
+  <img loading="lazy" src="img/P382b.png" style="max-width:92%;max-height:92vh;border-radius:4px;box-shadow:0 4px 32px rgba(0,0,0,.6);" alt="" />
 </div>
 <script>
 (function () {
