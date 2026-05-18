@@ -3,168 +3,740 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Coinage — Blog numizmatyczny</title>
-<meta name="description" content="Świat polskich monet z perspektywy kolekcjonera i pasjonata. Opracowania, klasyfikacje i rejestry aukcyjne monet próbnych PRL.">
-<link rel="canonical" href="https://szelmo.github.io/coinage-blog/">
+<title>Fałszywe próby PRL wybijane puncą — Klasyfikacja — Coinage</title>
+<meta name="description" content="Opis i klasyfikacja fałszerstw monet próbnych PRL z napisem PRÓBA wybitym puncą — typy, nominały, cechy rozpoznawcze.">
+<link rel="canonical" href="https://szelmo.github.io/coinage-blog/2024-05-25-falszerstwa-monet-probnych-prl-napis-proba-wybijany-punca/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./css/base.css">
-<link rel="stylesheet" href="./css/index.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/article.css">
 <script data-goatcounter="https://coinage-blog.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
+<style>
+/* ── KARTY MONET ── */
+.coin-card{border:1px solid var(--rule);border-radius:6px;overflow:visible;font-family:var(--serif);margin-bottom:1.6rem}
+.coin-header{background:var(--green);padding:10px 16px;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;border-radius:5px 5px 0 0}
+.coin-header-title{font-family:var(--heading);font-size:1rem;font-weight:700;color:#fff;line-height:1.3}
+.coin-header-meta{font-family:var(--mono);font-size:.52rem;color:rgba(255,255,255,.6);letter-spacing:.06em;text-transform:uppercase;margin-top:4px}
+.catnum{color:var(--gold);font-weight:700}
+.cc-sec-label{font-family:var(--mono);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;padding:5px 14px;border-bottom:1px solid var(--rule)}
+.cc-sec-label.orig{color:var(--green);background:var(--green-lt)}
+.cc-sec-label.fake{background:var(--red);color:#fff;font-size:.54rem;padding:8px 14px}
+.cc-sec-label.no-orig{color:var(--text-faint);background:#f9f9f7;font-style:italic}
+.coin-row{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule);background:#fff}
+.coin-img-cell{padding:10px 14px;text-align:center}
+.coin-img-cell:first-child{border-right:1px solid var(--rule)}
+.coin-img-cell img{max-height:240px;width:auto;margin:0 auto;cursor:zoom-in}
+.img-label{font-family:var(--mono);font-size:.46rem;color:var(--text-faint);letter-spacing:.1em;text-transform:uppercase;margin-top:5px}
+.coin-src{font-size:.73rem;font-style:italic;color:var(--text-faint);text-align:center;padding:4px 14px 7px;border-bottom:1px solid var(--rule);background:#fff}
+.fake-meta{display:flex;align-items:center;justify-content:space-between;padding:8px 14px;border-bottom:1px solid var(--rule);background:var(--red-bg)}
+.fake-meta-left{display:flex;flex-direction:column;gap:2px}
+.fake-meta-right{display:flex;flex-direction:column;gap:2px;align-items:flex-end}
+.meta-label{font-family:var(--mono);font-size:.46rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(139,35,24,.55)}
+.badge-num{font-family:var(--mono);font-size:.72rem;font-weight:700;color:var(--red);border:1.5px solid var(--red);border-radius:3px;padding:2px 8px;letter-spacing:.04em;display:inline-block}
+.badge-type{font-family:var(--mono);font-size:.72rem;font-weight:700;background:var(--red);color:#fff;border-radius:3px;padding:2px 8px;letter-spacing:.04em;display:inline-block}
+.fake-note{font-size:.82rem;font-style:italic;color:var(--text-dim);padding:5px 14px 6px;border-bottom:1px solid var(--rule);background:#fafaf8;line-height:1.55}
+.fake-note::before{content:"✎ ";font-style:normal;color:var(--text-faint)}
+.sec-sep{height:6px;background:var(--red-bg);border-bottom:1px solid var(--red-bdr);border-top:1px solid var(--red-bdr)}
+/* TABELA BAZA→CEL */
+.tbl-wrap{border:1px solid var(--rule);border-radius:6px;overflow:hidden;margin-bottom:1.6rem}
+.tbl-head{background:var(--green);padding:8px 16px;font-family:var(--heading);font-size:.95rem;font-weight:700;color:#fff}
+table.baza{width:100%;border-collapse:collapse;font-family:var(--serif);font-size:.88rem}
+table.baza th{font-family:var(--mono);font-size:.46rem;letter-spacing:.13em;text-transform:uppercase;color:var(--text);padding:6px 14px;border-bottom:2px solid var(--rule);text-align:left;background:#f9f9f7;font-weight:500}
+table.baza td{padding:7px 14px;border-bottom:1px solid var(--rule);vertical-align:top;color:var(--text)}
+table.baza tr:last-child td{border-bottom:none}
+table.baza tr:hover td{background:#fafaf8}
+.td-num{font-family:var(--mono);font-size:.58rem;color:var(--text-faint);white-space:nowrap}
+.td-baza{font-style:italic}
+.par-ref{font-family:var(--mono);font-size:.52rem;color:var(--text-faint);display:block;margin-top:2px}
+.par-num{font-family:var(--mono);font-size:.6rem;font-weight:700;background:#fdf3e0;color:#7a4a10;border-radius:3px;padding:1px 6px}
+.no-orig-cell{font-family:var(--mono);font-size:.58rem;color:var(--text-faint);font-style:italic}
+/* PUNCA CARDS */
+.punca-card{border:1px solid var(--rule);border-radius:6px;overflow:hidden;margin-bottom:.8rem;display:grid;grid-template-columns:120px 1fr;background:#fff}
+.punca-card.ref-card{border-color:var(--green-bdr)}
+.punca-card.fake-card{border-color:var(--red-bdr)}
+.punca-img{background:#f9f9f7;display:flex;align-items:center;justify-content:center;border-right:1px solid var(--rule);min-height:90px;padding:8px}
+.punca-img img{max-height:80px;width:auto;margin:0 auto;cursor:zoom-in}
+.punca-img-double{display:flex;flex-direction:column;background:#f9f9f7;border-right:1px solid var(--rule)}
+.punca-img-double div{display:flex;align-items:center;justify-content:center;padding:8px 12px;flex:1}
+.punca-img-double div:first-child{border-bottom:1px solid var(--rule)}
+.punca-img-double img{max-height:56px;max-width:96px;width:auto;object-fit:contain;cursor:zoom-in}
+.punca-body{padding:10px 14px}
+.punca-badge-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.punca-badge-ref{font-family:var(--mono);font-size:.52rem;font-weight:700;background:var(--green-lt);color:var(--green);border:1px solid var(--green-bdr);border-radius:3px;padding:2px 8px;letter-spacing:.06em;text-transform:uppercase}
+.punca-badge-type{font-family:var(--mono);font-size:.52rem;font-weight:700;background:var(--red);color:#fff;border-radius:3px;padding:2px 8px;letter-spacing:.06em}
+.punca-desc{font-size:.82rem;color:var(--text);line-height:1.65;margin:0;padding-left:1.2rem}
+.punca-desc li{margin-bottom:2px}
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.88);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out}
+.lightbox img{max-width:92%;max-height:92vh;border-radius:4px;box-shadow:0 4px 32px rgba(0,0,0,.6)}
+/* ZOOM */
+.zoom-hint{display:block;text-align:right;margin-top:3px;line-height:1;cursor:zoom-in}
+.zoom-hint svg{width:12px;height:12px;opacity:.32;vertical-align:middle;transition:opacity .15s}
+.zoom-hint:hover svg{opacity:.7}
+hr.section-hr{border:none;border-top:1px solid var(--rule);width:60%;margin:1.8rem auto}
+.sec-title{font-family:var(--heading);font-size:.95rem;font-weight:700;color:var(--text);margin:0 0 .8rem;padding-bottom:.5rem;border-bottom:2px solid var(--green-bdr)}
+.update-box ul{margin:.2rem 0 0 1.1rem;padding:0}
+.update-box ul li{font-size:.88rem;line-height:1.6}
+.updates-older summary{font-family:var(--mono);font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green);cursor:pointer;user-select:none;padding:.35rem 0;display:inline-flex;align-items:center;gap:.4rem;list-style:none}
+.updates-older summary::-webkit-details-marker{display:none}
+.updates-older summary::before{content:'▶';font-size:.5rem;transition:transform .2s;display:inline-block}
+.updates-older[open] summary::before{transform:rotate(90deg)}
+@media(max-width:640px){.coin-card .coin-row{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 
-<div class="hero-c">
-  <div class="hero-c-inner">
-    <div class="hero-c-left">
-      <div class="hero-c-title">Coinage</div>
-      <div class="hero-c-sub">Blog numizmatyczny</div>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/coinage-blog/" class="logo">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+        <circle cx="16" cy="16" r="11" fill="#fef9f0" stroke="#a07830" stroke-width="1.4"/>
+        <circle cx="16" cy="16" r="7.5" fill="none" stroke="#a07830" stroke-width=".7" stroke-dasharray="1.8 1.4"/>
+        <circle cx="16" cy="16" r="4.5" fill="none" stroke="#a07830" stroke-width=".5"/>
+        <line x1="24.5" y1="24.5" x2="33" y2="33" stroke="#2d5a3d" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="16" cy="16" r="11" fill="none" stroke="#2d5a3d" stroke-width="1.8"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-name">Coinage</span>
+        
+      </div>
+    </a>
+    <nav class="site-nav">
+      <a href="/coinage-blog/">Strona główna</a>
+    </nav>
+  </div>
+</header>
+
+<article>
+  <div class="art-hdr">
+    <div class="art-hdr-inner">
+      <h1 class="art-title">Fałszywe próby PRL wybijane puncą</h1>
+      <p class="art-intro-sub">Klasyfikacja</p>
+      <div class="art-meta">
+        <span>25 maja 2024</span>
+        <span>·</span>
+        <span>12 min czytania</span>
+      </div>
+      <div class="art-cats">
+        <span class="art-cats-label">Tagi:</span>
+        <span class="art-cat">Fałszerstwa</span>
+        <span class="art-cat">Próby PRL</span>
+        <span class="art-cat">NGC</span>
+      </div>
     </div>
-    <div class="hero-c-right">
-      <div class="hero-c-desc">Świat polskich monet z perspektywy ich kolekcjonera i pasjonata.</div>
+  </div>
+
+  <div class="hero-wrap">
+    <img loading="lazy" src="img/title.jpg" alt="Fałszerstwa monet próbnych PRL — napis PRÓBA wybijany puncą" />
+  </div>
+
+  <div class="art-body">
+    <br>
+
+    <p class="drop-cap">Celem niniejszego opracowania jest zebranie w jednym miejscu opisu monet próbnych PRL, które mają cechy fałszerstw na szkodę kolekcjonerów. Intencją jego powstania jest propagowanie wiedzy dotyczącej identyfikacji monet próbnych PRL, które budzą wątpliwości co do swojej oryginalności.</p>
+
+    <p>Treści zawarte w niniejszym opracowaniu zostały przygotowane w oparciu o analizę archiwalnych wyników aukcyjnych dostępnych na portalach <a href="http://onebid.pl" target="_blank" rel="noopener">onebid.pl</a>, <a href="https://archiwum.niemczyk.pl/" target="_blank" rel="noopener">aukcjamonet.pl</a> oraz katalogu p. Janusza Parchimowicza <em>„Polskie Monety Próbne 1949–1990 (Polska Rzeczpospolita Ludowa)"</em>, wydanie I, 2018. Tezy postawione w dokumencie zostały skonsultowane z p. J. Parchimowiczem oraz kilkoma domami aukcyjnymi.</p>
+
+    <div class="update-box">
+      <span class="update-date">Aktualizacja 2026.05.10</span>
+      Notowania aukcyjne zostały wydzielone do oddzielnego artykułu. 
     </div>
-  </div>
-</div>
+    <div class="update-box">
+      <span class="update-date">Aktualizacja 2025.04.05</span>
+      W trakcie poszerzonej kwerendy wyników aukcyjnych udało się odnaleźć i sklasyfikować dwa dodatkowe nominały (2 grosze 1949r Al, 1 złoty 1949r Al), dla których występują opisane wcześniej typy fałszerstw. Zostały one uwzględnione w opisie i notowaniach aukcyjnych.
+    </div>
 
-<main class="main">
+    <hr class="section-hr">
 
-  <div class="filter-bar">
-    <span class="filter-bar-label">Filtruj:</span>
-    <span class="ftag ftag-all ftag-active" onclick="filterCards(this,'')">Wszystkie</span>
-    <span class="ftag ftag-red" onclick="filterCards(this,'Fałszerstwa')">Fałszerstwa</span>
-    <span class="ftag" onclick="filterCards(this,'Próby PRL')">Próby PRL</span>
-    <span class="ftag" onclick="filterCards(this,'Grading')">Grading</span>
-    <span class="ftag" onclick="filterCards(this,'Aukcje')">Aukcje</span>
-    <span class="ftag" onclick="filterCards(this,'NGC')">NGC</span>
-  </div>
+    <h2>Informacje podstawowe</h2>
 
-  <div class="section-label">Fałszywe próby PRL</div>
-  <div class="articles">
+    <ol>
+      <li>Fałszerstwa wykonane zostały na szkodę kolekcjonerów.</li>
+      <li>Fałszerstwo polega na dobiciu do monety obiegowej PRL słowa „PRÓBA" puncą, która ma imitować używaną oryginalnie.</li>
+      <li>Fałszowane są monety, w przypadku których dobicie puncą słowa „PRÓBA" podnosi ich wartość — zamiast jako obiegowe o wielomilionowych nakładach, są klasyfikowane jako próbne z nakładami ≤ 100 sztuk.</li>
+      <li>Zauważalny jest znaczny wzrost cen aukcyjnych tego typu walorów (szczególnie w 2024 roku), co rodzi obawę o możliwość pojawienia się identycznych lub podobnych fałszerstw w przyszłości. Ryzyko to wzrasta zwłaszcza w przypadku uwierzytelnienia fałszywych monet poprzez ich sprzedaż w ramach aukcji renomowanych domów aukcyjnych i/lub ich gradingu przez NGC oraz PCGS.</li>
+    </ol>
 
-    <a href="./2024-05-25-falszerstwa-monet-probnych-prl-napis-proba-wybijany-punca/" class="art-card" data-tags="Fałszerstwa,Próby PRL">
-      <div class="art-card-hero">
-        <img loading="lazy" src="./2024-05-25-falszerstwa-monet-probnych-prl-napis-proba-wybijany-punca/img/title.jpg" alt="" style="width:100%;height:140px;object-fit:cover" />
+    <hr class="section-hr">
+
+    <h2>Typy fałszerstw</h2>
+
+    <p>Fałszerstwa zostały dokonane na bazie następujących monet obiegowych PRL (stan na 2025.04.05):</p>
+    <ul>
+      <li>2 grosze 1949r Al (Parchimowicz: 202)</li>
+      <li>5 groszy 1949r Brąz (Parchimowicz: 203a)</li>
+      <li>5 groszy 1949r Al (Parchimowicz: 203b)</li>
+      <li>10 groszy 1949r CuNi (Parchimowicz: 205a)</li>
+      <li>10 groszy 1949r Al (Parchimowicz: 205b)</li>
+      <li>20 groszy 1949r CuNi (Parchimowicz: 207a)</li>
+      <li>1 złoty 1949r Al (Parchimowicz: 212b)</li>
+    </ul>
+
+    <p>Na dzień 2025.04.05 nie znaleziono sfałszowanych monet bazujących na: 1 grosz 1949, 20 groszy 1949, 50 groszy (CuNi i Al), 1 złoty 1949. Nie oznacza to jednak, że takie nie istnieją.</p>
+
+    <p>Sklasyfikowane typy fałszerstw (Par. = Parchimowicz):</p>
+
+    <div class="tbl-wrap">
+      <div class="tbl-head">Sklasyfikowane typy fałszerstw</div>
+      <table class="baza">
+        <thead>
+          <tr>
+            <th style="width:40px">L.p.</th>
+            <th>Baza fałszerstwa</th>
+            <th>Cel fałszerstwa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-num">1</td>
+            <td class="td-baza">2 grosze 1949 Al<span class="par-ref">Par. 202</span></td>
+            <td>Moneta skatalogowana jako Par. <span class="par-num">P202d</span></td>
+          </tr>
+          <tr>
+            <td class="td-num">2</td>
+            <td class="td-baza">5 groszy 1949 Brąz<span class="par-ref">Par. 203a</span></td>
+            <td class="no-orig-cell">Moneta nienotowana — fałszerstwo kreuje nowy typ</td>
+          </tr>
+          <tr>
+            <td class="td-num">3</td>
+            <td class="td-baza">5 groszy 1949 Al<span class="par-ref">Par. 203b</span></td>
+            <td>Moneta skatalogowana jako Par. <span class="par-num">P203g</span></td>
+          </tr>
+          <tr>
+            <td class="td-num">4a</td>
+            <td class="td-baza">10 groszy 1949 CuNi<span class="par-ref">Par. 205a</span></td>
+            <td>Moneta skatalogowana jako Par. <span class="par-num">P205d</span></td>
+          </tr>
+          <tr>
+            <td class="td-num">4b</td>
+            <td class="td-baza">10 groszy 1949 CuNi<span class="par-ref">Par. 205a</span></td>
+            <td class="no-orig-cell">Moneta nienotowana — fałszerstwo kreuje nowy typ</td>
+          </tr>
+          <tr>
+            <td class="td-num">5</td>
+            <td class="td-baza">10 groszy 1949 Al<span class="par-ref">Par. 205b</span></td>
+            <td class="no-orig-cell">Moneta nienotowana — fałszerstwo kreuje nowy typ</td>
+          </tr>
+          <tr>
+            <td class="td-num">6</td>
+            <td class="td-baza">20 groszy 1949 CuNi<span class="par-ref">Par. 207a</span></td>
+            <td>Moneta skatalogowana jako Par. <span class="par-num">P207d</span></td>
+          </tr>
+          <tr>
+            <td class="td-num">7</td>
+            <td class="td-baza">1 złoty 1949 Al<span class="par-ref">Par. 212b</span></td>
+            <td>Moneta skatalogowana jako Par. <span class="par-num">P215d</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Główne cechy pozwalające rozpoznać poszczególne typy fałszerstwa:</p>
+
+    <div class="punca-card ref-card">
+      <div class="punca-img"><img loading="lazy" src="img/punca_ref.jpg" alt="Napis standardowy — punkt odniesienia" style="cursor:zoom-in" onclick="showLb('lb-punca-ref')" />
+          <span class="zoom-hint" onclick="showLb('lb-punca-ref')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span></div>
+      <div class="punca-body">
+        <div class="punca-badge-row"><span class="punca-badge-ref">NAPIS REFERENCYJNY</span></div>
+        <ul class="punca-desc">
+          <li>Litery „przysadziste"</li>
+          <li>Litera A z szerzej rozstawionymi daszkami</li>
+          <li>Brzuszki litery B zbliżonej wielkości</li>
+        </ul>
       </div>
-      <div class="art-card-body">
-        <div class="art-card-meta">
-          <span class="art-card-date">25 maja 2024</span>
-          <div class="art-card-tags">
-            <span class="art-card-tag red">Fałszerstwa</span>
-            <span class="art-card-tag">Próby PRL</span>
-          </div>
+    </div>
+
+    <div class="punca-card fake-card">
+      <div class="punca-img"><img loading="lazy" src="img/punca_FT1.jpg" alt="Typ fałszerstwa F-T1" style="cursor:zoom-in" onclick="showLb('lb-punca-ft1')" />
+          <span class="zoom-hint" onclick="showLb('lb-punca-ft1')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span></div>
+      <div class="punca-body">
+        <div class="punca-badge-row"><span class="punca-badge-type">F-T1</span></div>
+        <ul class="punca-desc">
+          <li>Litery smukłe</li>
+          <li>Daszki litery A bardziej spadziste</li>
+          <li>Ogonek litery Ó skierowany prosto ku górze</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="punca-card fake-card">
+      <div class="punca-img"><img loading="lazy" src="img/punca_FT2.jpg" alt="Typ fałszerstwa F-T2" style="cursor:zoom-in" onclick="showLb('lb-punca-ft2')" />
+          <span class="zoom-hint" onclick="showLb('lb-punca-ft2')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span></div>
+      <div class="punca-body">
+        <div class="punca-badge-row"><span class="punca-badge-type">F-T2</span></div>
+        <ul class="punca-desc">
+          <li>Litery smukłe</li>
+          <li>Daszki litery A bardziej spadziste</li>
+          <li>Dolny brzuszek litery B większy niż górny</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="punca-card fake-card">
+      <div class="punca-img-double">
+        <div><img loading="lazy" src="img/punca_FT3a.jpg" alt="Typ fałszerstwa F-T3 (1)" style="cursor:zoom-in" onclick="showLb('lb-punca-ft3a')" />
+          <span class="zoom-hint" onclick="showLb('lb-punca-ft3a')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span></div>
+        <div><img loading="lazy" src="img/punca_FT3b.jpg" alt="Typ fałszerstwa F-T3 (2)" style="cursor:zoom-in" onclick="showLb('lb-punca-ft3b')" />
+          <span class="zoom-hint" onclick="showLb('lb-punca-ft3b')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span></div>
+      </div>
+      <div class="punca-body">
+        <div class="punca-badge-row"><span class="punca-badge-type">F-T3</span></div>
+        <ul class="punca-desc">
+          <li>Litery smukłe</li>
+          <li>Ogonek nad O wygląda na dobity oddzielnie</li>
+          <li>Daszki litery A bardziej spadziste</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="punca-card fake-card">
+      <div class="punca-img"><img loading="lazy" src="img/punca_FT4.jpg" alt="Typ fałszerstwa F-T4" style="cursor:zoom-in" onclick="showLb('lb-punca-ft4')" />
+          <span class="zoom-hint" onclick="showLb('lb-punca-ft4')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span></div>
+      <div class="punca-body">
+        <div class="punca-badge-row"><span class="punca-badge-type">F-T4</span></div>
+        <ul class="punca-desc">
+          <li>Litery smukłe</li>
+          <li>Daszki litery A bardziej spadziste</li>
+          <li>Litery wyglądają jak dobijane indywidualnie</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="section-hr">
+
+    <h2>Lista sklasyfikowanych monet</h2>
+
+    <p>Monety podejrzewane o bycie fałszerstwami przestawione zostały w kartach poniżej. Numery fałszerstw oznaczone zostały stosownym kodem oraz typem fałszerstwa.</p>
+
+    <!-- ── 1. 2 grosze 1949 Al ── -->
+    <div class="coin-card">
+      <div class="coin-header">
+        <div>
+        <div class="coin-header-title">2 grosze 1949 — Aluminium</div>
+        <div class="coin-header-meta">Par. <span class="catnum">202</span> → fałszerstwo jako Par. <span class="catnum">P202d</span></div>
         </div>
-        <div class="art-card-title">Fałszywe próby PRL wybijane puncą</div>
-        <div class="art-card-subtitle">Klasyfikacja</div>
-        <p class="art-card-excerpt">Opis i klasyfikacja fałszerstw monet próbnych PRL z napisem PRÓBA wybitym puncą — typy, nominały, cechy rozpoznawcze.</p>
+        <span class="metal metal-Al" data-tip="Aluminium">Al</span>
       </div>
-      <div class="art-card-footer">
-        <span class="art-card-readmore">Czytaj →</span>
-        <span class="art-card-readtime">12 min</span>
-      </div>
-    </a>
-
-    <a href="./2024-05-25-falszerstwa-monet-probnych-prl-notowania-aukcyjne/" class="art-card" data-tags="Fałszerstwa,Próby PRL,Aukcje">
-      <div class="art-card-hero" style="background:var(--green)">
-        <svg width="80" height="64" viewBox="0 0 80 64" fill="none" opacity=".35">
-          <circle cx="18" cy="32" r="13" stroke="#fff" stroke-width="3.5" fill="none"/>
-          <line x1="28" y1="42" x2="36" y2="52" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
-          <line x1="14" y1="32" x2="22" y2="32" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-          <line x1="18" y1="28" x2="18" y2="36" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-          <rect x="40" y="14" width="32" height="5" rx="2.5" fill="#fff"/>
-          <rect x="40" y="26" width="22" height="4" rx="2" fill="#fff"/>
-          <rect x="40" y="37" width="26" height="4" rx="2" fill="#fff"/>
-          <rect x="40" y="48" width="18" height="4" rx="2" fill="#fff"/>
-        </svg>
-      </div>
-      <div class="art-card-body">
-        <div class="art-card-meta">
-          <span class="art-card-date">25 maja 2024 · aktualizowany</span>
-          <div class="art-card-tags">
-            <span class="art-card-tag red">Fałszerstwa</span>
-            <span class="art-card-tag">Próby PRL</span>
-            <span class="art-card-tag">Aukcje</span>
-          </div>
+      <div class="cc-sec-label orig">Przykład monety oryginalnej</div>
+      <div class="coin-row">
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/2gr_orig_R.jpg" alt="2 grosze 1949 Al — oryginał, rewers" style="cursor:zoom-in" onclick="showLb('lb-2gr-orig-r')" />
+          <span class="zoom-hint" onclick="showLb('lb-2gr-orig-r')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Rewers</div>
         </div>
-        <div class="art-card-title">Fałszywe próby PRL wybijane puncą</div>
-        <div class="art-card-subtitle">Notowania aukcyjne</div>
-        <p class="art-card-excerpt">Rejestr transakcji fałszywych monet próbnych PRL — aktualizowany na bieżąco.</p>
-      </div>
-      <div class="art-card-footer">
-        <span class="art-card-readmore">Czytaj →</span>
-        <span class="art-card-readtime">rejestr</span>
-      </div>
-    </a>
-
-    <a href="./2025-04-05-nowe-falszywe-proby-prl-wybijane-punca/" class="art-card" data-tags="Fałszerstwa,Próby PRL">
-      <div class="art-card-hero" style="background:#fff;border-bottom:1px solid var(--rule)">
-        <img loading="lazy" src="./2025-04-05-nowe-falszywe-proby-prl-wybijane-punca/img/title.png" alt="" style="max-height:140px;width:auto;object-fit:contain" />
-      </div>
-      <div class="art-card-body">
-        <div class="art-card-meta">
-          <span class="art-card-date">5 kwietnia 2025</span>
-          <div class="art-card-tags">
-            <span class="art-card-tag red">Fałszerstwa</span>
-            <span class="art-card-tag">Próby PRL</span>
-          </div>
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/2gr_orig_A.jpg" alt="2 grosze 1949 Al — oryginał, awers" style="cursor:zoom-in" onclick="showLb('lb-2gr-orig-a')" />
+          <span class="zoom-hint" onclick="showLb('lb-2gr-orig-a')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Awers</div>
         </div>
-        <div class="art-card-title">Fałszywe próby PRL wybijane puncą</div>
-        <div class="art-card-subtitle">Nowe egzemplarze</div>
-        <p class="art-card-excerpt">Trzy nowe egzemplarze fałszywych monet próbnych PRL z napisem wybitym puncą odnalezione w archiwach aukcyjnych.</p>
       </div>
-      <div class="art-card-footer">
-        <span class="art-card-readmore">Czytaj →</span>
-        <span class="art-card-readtime">4 min</span>
+      <div class="coin-src">źródło: <a href="https://archiwum.niemczyk.pl/product/302377/proba-aluminium-2-grosze-1949-naklad-100-sztuk?desc=0" target="_blank" rel="noopener">DA Niemczyk</a></div>
+      <div class="cc-sec-label fake">Sklasyfikowane fałszerstwa</div>
+      <div class="fake-meta">
+        <div class="fake-meta-left"><span class="meta-label">Numer</span><span class="badge-num">F2G-1</span></div>
+        <div class="fake-meta-right"><span class="meta-label">Typ fałszerstwa</span><span class="badge-type">F-T1</span></div>
       </div>
-    </a>
+      <div class="coin-row">
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/F2G-1_R.jpg" alt="F2G-1 — rewers" style="cursor:zoom-in" onclick="showLb('lb-f2g1-r')" />
+          <span class="zoom-hint" onclick="showLb('lb-f2g1-r')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Rewers</div>
+        </div>
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/F2G-1_A.jpg" alt="F2G-1 — awers" style="cursor:zoom-in" onclick="showLb('lb-f2g1-a')" />
+          <span class="zoom-hint" onclick="showLb('lb-f2g1-a')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Awers</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-hr">
+
+    <!-- ── 2. 5 groszy 1949 Al ── -->
+    <div class="coin-card">
+      <div class="coin-header">
+        <div>
+        <div class="coin-header-title">5 groszy 1949 — Aluminium</div>
+        <div class="coin-header-meta">Par. <span class="catnum">203b</span> → fałszerstwo jako Par. <span class="catnum">P203g</span></div>
+        </div>
+        <span class="metal metal-Al" data-tip="Aluminium">Al</span>
+      </div>
+      <div class="cc-sec-label orig">Przykład monety oryginalnej</div>
+      <div class="coin-row">
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/5gr_al_orig_R.jpg" alt="5 groszy 1949 Al — oryginał, rewers" style="cursor:zoom-in" onclick="showLb('lb-5gral-orig-r')" />
+          <span class="zoom-hint" onclick="showLb('lb-5gral-orig-r')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Rewers</div>
+        </div>
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/5gr_al_orig_A.jpg" alt="5 groszy 1949 Al — oryginał, awers" style="cursor:zoom-in" onclick="showLb('lb-5gral-orig-a')" />
+          <span class="zoom-hint" onclick="showLb('lb-5gral-orig-a')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Awers</div>
+        </div>
+      </div>
+      <div class="coin-src">źródło: <a href="https://archiwum.niemczyk.pl/product/257274/prl-proba-aluminium-5-groszy-1949-st1" target="_blank" rel="noopener">DA Niemczyk</a></div>
+      <div class="cc-sec-label fake">Sklasyfikowane fałszerstwa</div>
+      <div class="fake-meta">
+        <div class="fake-meta-left"><span class="meta-label">Numer</span><span class="badge-num">F5G-1</span></div>
+        <div class="fake-meta-right"><span class="meta-label">Typ fałszerstwa</span><span class="badge-type">F-T1</span></div>
+      </div>
+      <div class="coin-row">
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/F5G-1_R.jpg" alt="F5G-1 — rewers" style="cursor:zoom-in" onclick="showLb('lb-f5g1-r')" />
+          <span class="zoom-hint" onclick="showLb('lb-f5g1-r')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Rewers</div>
+        </div>
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/F5G-1_A.jpg" alt="F5G-1 — awers" style="cursor:zoom-in" onclick="showLb('lb-f5g1-a')" />
+          <span class="zoom-hint" onclick="showLb('lb-f5g1-a')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Awers</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-hr">
+
+    <!-- ── 3. 5 groszy 1949 Brąz ── -->
+    <div class="coin-card">
+      <div class="coin-header">
+        <div>
+        <div class="coin-header-title">5 groszy 1949 — Brąz</div>
+        <div class="coin-header-meta">Par. <span class="catnum">203a</span> — moneta nienotowana, fałszerstwo kreuje nowy typ</div>
+        </div>
+        <span class="metal metal-B" data-tip="Brąz">B</span>
+      </div>
+      <div class="cc-sec-label no-orig">Brak monety oryginalnej — fałszerstwo kreuje nowy typ</div>
+      <div class="cc-sec-label fake">Sklasyfikowane fałszerstwa</div>
+      <div class="fake-meta">
+        <div class="fake-meta-left"><span class="meta-label">Numer</span><span class="badge-num">F5G-2</span></div>
+        <div class="fake-meta-right"><span class="meta-label">Typ fałszerstwa</span><span class="badge-type">F-T1</span></div>
+      </div>
+      <div class="coin-row">
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/F5G-2_R.jpg" alt="F5G-2 — rewers" style="cursor:zoom-in" onclick="showLb('lb-f5g2-r')" />
+          <span class="zoom-hint" onclick="showLb('lb-f5g2-r')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Rewers</div>
+        </div>
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/F5G-2_A.jpg" alt="F5G-2 — awers" style="cursor:zoom-in" onclick="showLb('lb-f5g2-a')" />
+          <span class="zoom-hint" onclick="showLb('lb-f5g2-a')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Awers</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-hr">
+
+    <!-- ── 4. 10 groszy 1949 Al — napis poziomo ── -->
+    <div class="coin-card">
+      <div class="coin-header">
+        <div>
+        <div class="coin-header-title">10 groszy 1949 — Aluminium, napis PRÓBA poziomo</div>
+        <div class="coin-header-meta">Par. <span class="catnum">205b</span> — moneta nienotowana · znana jest wersja w mosiądzu (Par. <span class="catnum">P205.b1</span>)</div>
+        </div>
+        <span class="metal metal-Al" data-tip="Aluminium">Al</span>
+      </div>
+      <div class="cc-sec-label no-orig">Brak monety oryginalnej — fałszerstwo kreuje nowy typ</div>
+      <div class="cc-sec-label fake">Sklasyfikowane fałszerstwa</div>
+      <div class="fake-meta">
+        <div class="fake-meta-left"><span class="meta-label">Numer</span><span class="badge-num">F10G-1</span></div>
+        <div class="fake-meta-right"><span class="meta-label">Typ fałszerstwa</span><span class="badge-type">F-T3</span></div>
+      </div>
+      <div class="coin-row">
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/F10G-1_R.jpg" alt="F10G-1 — rewers" style="cursor:zoom-in" onclick="showLb('lb-f10g1-r')" />
+          <span class="zoom-hint" onclick="showLb('lb-f10g1-r')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Rewers</div>
+        </div>
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/F10G-1_A.jpg" alt="F10G-1 — awers" style="cursor:zoom-in" onclick="showLb('lb-f10g1-a')" />
+          <span class="zoom-hint" onclick="showLb('lb-f10g1-a')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Awers</div>
+        </div>
+      </div>
+      <div class="fake-note">Moneta ogradowana przez NGC: <a href="https://www.ngccoin.com/certlookup/3992510-002/64/" target="_blank" rel="noopener">3992510-002 (MS64)</a></div>
+    </div>
+
+    <hr class="section-hr">
+
+    <!-- ── 5. 10 groszy 1949 CuNi — napis poziomo ── -->
+    <div class="coin-card">
+      <div class="coin-header">
+        <div>
+        <div class="coin-header-title">10 groszy 1949 — Miedzionikiel, napis PRÓBA poziomo</div>
+        <div class="coin-header-meta">Par. <span class="catnum">205a</span> — moneta nienotowana · znana jest wersja w mosiądzu (Par. <span class="catnum">P205.b1</span>)</div>
+        </div>
+        <span class="metal metal-CuNi" data-tip="Miedzionikiel">CuNi</span>
+      </div>
+      <div class="cc-sec-label no-orig">Brak monety oryginalnej — fałszerstwo kreuje nowy typ</div>
+      <div class="cc-sec-label fake">Sklasyfikowane fałszerstwa</div>
+      <div class="fake-meta">
+        <div class="fake-meta-left"><span class="meta-label">Numer</span><span class="badge-num">F10G-2</span></div>
+        <div class="fake-meta-right"><span class="meta-label">Typ fałszerstwa</span><span class="badge-type">F-T3</span></div>
+      </div>
+      <div class="coin-row">
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/F10G-2_R.jpg" alt="F10G-2 — rewers" style="cursor:zoom-in" onclick="showLb('lb-f10g2-r')" />
+          <span class="zoom-hint" onclick="showLb('lb-f10g2-r')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Rewers</div>
+        </div>
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/F10G-2_A.jpg" alt="F10G-2 — awers" style="cursor:zoom-in" onclick="showLb('lb-f10g2-a')" />
+          <span class="zoom-hint" onclick="showLb('lb-f10g2-a')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Awers</div>
+        </div>
+      </div>
+      <div class="fake-note">Krój czcionki podobny do monety F10G-1, ale napis słabiej wybity (twardszy metal?).</div>
+    </div>
+
+    <hr class="section-hr">
+
+    <!-- ── 6. 10 groszy 1949 CuNi — napis ukośny ── -->
+    <div class="coin-card">
+      <div class="coin-header">
+        <div>
+        <div class="coin-header-title">10 groszy 1949 — Miedzionikiel, napis PRÓBA ukośny</div>
+        <div class="coin-header-meta">Par. <span class="catnum">205a</span> → fałszerstwo jako Par. <span class="catnum">P205d</span></div>
+        </div>
+        <span class="metal metal-CuNi" data-tip="Miedzionikiel">CuNi</span>
+      </div>
+      <div class="cc-sec-label orig">Przykład monety oryginalnej</div>
+      <div class="coin-row">
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/10gr_cuni_orig_R.jpg" alt="10 groszy 1949 CuNi — oryginał, rewers" style="cursor:zoom-in" onclick="showLb('lb-10grcuni-orig-r')" />
+          <span class="zoom-hint" onclick="showLb('lb-10grcuni-orig-r')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Rewers</div>
+        </div>
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/10gr_cuni_orig_A.jpg" alt="10 groszy 1949 CuNi — oryginał, awers" style="cursor:zoom-in" onclick="showLb('lb-10grcuni-orig-a')" />
+          <span class="zoom-hint" onclick="showLb('lb-10grcuni-orig-a')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Awers</div>
+        </div>
+      </div>
+      <div class="coin-src">źródło: <a href="https://onebid.pl/pl/monety-proba-miedzionikiel-10-groszy-1949-kolekcjonerska-b-rzadka/2212163" target="_blank" rel="noopener">DA Marciniak</a></div>
+      <div class="cc-sec-label fake">Sklasyfikowane fałszerstwa</div>
+      <div class="fake-meta">
+        <div class="fake-meta-left"><span class="meta-label">Numer</span><span class="badge-num">F10G-3</span></div>
+        <div class="fake-meta-right"><span class="meta-label">Typ fałszerstwa</span><span class="badge-type">F-T1</span></div>
+      </div>
+      <div class="coin-row">
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/F10G-3_R.jpg" alt="F10G-3 — rewers" style="cursor:zoom-in" onclick="showLb('lb-f10g3-r')" />
+          <span class="zoom-hint" onclick="showLb('lb-f10g3-r')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Rewers</div>
+        </div>
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/F10G-3_A.jpg" alt="F10G-3 — awers" style="cursor:zoom-in" onclick="showLb('lb-f10g3-a')" />
+          <span class="zoom-hint" onclick="showLb('lb-f10g3-a')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Awers</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-hr">
+
+    <!-- ── 7. 20 groszy 1949 CuNi ── -->
+    <div class="coin-card">
+      <div class="coin-header">
+        <div>
+        <div class="coin-header-title">20 groszy 1949 — Miedzionikiel</div>
+        <div class="coin-header-meta">Par. <span class="catnum">207a</span> → fałszerstwo jako Par. <span class="catnum">P207d</span></div>
+        </div>
+        <span class="metal metal-CuNi" data-tip="Miedzionikiel">CuNi</span>
+      </div>
+      <div class="cc-sec-label orig">Przykład monety oryginalnej</div>
+      <div class="coin-row">
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/20gr_orig_R.jpg" alt="20 groszy 1949 CuNi — oryginał, rewers" style="cursor:zoom-in" onclick="showLb('lb-20gr-orig-r')" />
+          <span class="zoom-hint" onclick="showLb('lb-20gr-orig-r')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Rewers</div>
+        </div>
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/20gr_orig_A.jpg" alt="20 groszy 1949 CuNi — oryginał, awers" style="cursor:zoom-in" onclick="showLb('lb-20gr-orig-a')" />
+          <span class="zoom-hint" onclick="showLb('lb-20gr-orig-a')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Awers</div>
+        </div>
+      </div>
+      <div class="coin-src">źródło: <a href="https://archiwum.niemczyk.pl/product/255501/prl-proba-miedzionikiel-20-groszy-1949" target="_blank" rel="noopener">DA Niemczyk</a></div>
+      <div class="cc-sec-label fake">Sklasyfikowane fałszerstwa</div>
+      <div class="fake-meta">
+        <div class="fake-meta-left"><span class="meta-label">Numer</span><span class="badge-num">F20G-1</span></div>
+        <div class="fake-meta-right"><span class="meta-label">Typ fałszerstwa</span><span class="badge-type">F-T2</span></div>
+      </div>
+      <div class="coin-row">
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/F20G-1_R.jpg" alt="F20G-1 — rewers" style="cursor:zoom-in" onclick="showLb('lb-f20g1-r')" />
+          <span class="zoom-hint" onclick="showLb('lb-f20g1-r')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Rewers</div>
+        </div>
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/F20G-1_A.jpg" alt="F20G-1 — awers" style="cursor:zoom-in" onclick="showLb('lb-f20g1-a')" />
+          <span class="zoom-hint" onclick="showLb('lb-f20g1-a')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Awers</div>
+        </div>
+      </div>
+      <div class="sec-sep"></div>
+      <div class="fake-meta">
+        <div class="fake-meta-left"><span class="meta-label">Numer</span><span class="badge-num">F20G-2</span></div>
+        <div class="fake-meta-right"><span class="meta-label">Typ fałszerstwa</span><span class="badge-type">F-T1</span></div>
+      </div>
+      <div class="coin-row">
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/F20G-2_R.jpg" alt="F20G-2 — rewers" style="cursor:zoom-in" onclick="showLb('lb-f20g2-r')" />
+          <span class="zoom-hint" onclick="showLb('lb-f20g2-r')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Rewers</div>
+        </div>
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/F20G-2_A.jpg" alt="F20G-2 — awers" style="cursor:zoom-in" onclick="showLb('lb-f20g2-a')" />
+          <span class="zoom-hint" onclick="showLb('lb-f20g2-a')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Awers</div>
+        </div>
+      </div>
+      <div class="fake-note">Charakterystyczne zabrudzenia/nalot.</div>
+      <div class="sec-sep"></div>
+      <div class="fake-meta">
+        <div class="fake-meta-left"><span class="meta-label">Numer</span><span class="badge-num">F20G-3</span></div>
+        <div class="fake-meta-right"><span class="meta-label">Typ fałszerstwa</span><span class="badge-type">F-T4</span></div>
+      </div>
+      <div class="coin-row">
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/F20G-3_R.jpg" alt="F20G-3 — rewers" style="cursor:zoom-in" onclick="showLb('lb-f20g3-r')" />
+          <span class="zoom-hint" onclick="showLb('lb-f20g3-r')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Rewers</div>
+        </div>
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/F20G-3_A.jpg" alt="F20G-3 — awers" style="cursor:zoom-in" onclick="showLb('lb-f20g3-a')" />
+          <span class="zoom-hint" onclick="showLb('lb-f20g3-a')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Awers</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-hr">
+
+    <!-- ── 8. 1 złoty 1949 Al ── -->
+    <div class="coin-card">
+      <div class="coin-header">
+        <div>
+        <div class="coin-header-title">1 złoty 1949 — Aluminium</div>
+        <div class="coin-header-meta">Par. <span class="catnum">212b</span> → fałszerstwo jako Par. <span class="catnum">P215d</span></div>
+        </div>
+        <span class="metal metal-Al" data-tip="Aluminium">Al</span>
+      </div>
+      <div class="cc-sec-label orig">Przykład monety oryginalnej</div>
+      <div class="coin-row">
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/1zl_orig_R.jpg" alt="1 złoty 1949 Al — oryginał, rewers" style="cursor:zoom-in" onclick="showLb('lb-1zl-orig-r')" />
+          <span class="zoom-hint" onclick="showLb('lb-1zl-orig-r')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Rewers</div>
+        </div>
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/1zl_orig_A.jpg" alt="1 złoty 1949 Al — oryginał, awers" style="cursor:zoom-in" onclick="showLb('lb-1zl-orig-a')" />
+          <span class="zoom-hint" onclick="showLb('lb-1zl-orig-a')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Awers</div>
+        </div>
+      </div>
+      <div class="coin-src">źródło: <a href="https://archiwum.niemczyk.pl/product/302372/proba-aluminium-1-zloty-1949-naklad-100-sztuk?desc=0" target="_blank" rel="noopener">DA Niemczyk</a></div>
+      <div class="cc-sec-label fake">Sklasyfikowane fałszerstwa</div>
+      <div class="fake-meta">
+        <div class="fake-meta-left"><span class="meta-label">Numer</span><span class="badge-num">F1Z-1</span></div>
+        <div class="fake-meta-right"><span class="meta-label">Typ fałszerstwa</span><span class="badge-type">F-T2</span></div>
+      </div>
+      <div class="coin-row">
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/F1Z-1_R.jpg" alt="F1Z-1 — rewers" style="cursor:zoom-in" onclick="showLb('lb-f1z1-r')" />
+          <span class="zoom-hint" onclick="showLb('lb-f1z1-r')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Rewers</div>
+        </div>
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/F1Z-1_A.jpg" alt="F1Z-1 — awers" style="cursor:zoom-in" onclick="showLb('lb-f1z1-a')" />
+          <span class="zoom-hint" onclick="showLb('lb-f1z1-a')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Awers</div>
+        </div>
+      </div>
+      <div class="sec-sep"></div>
+      <div class="fake-meta">
+        <div class="fake-meta-left"><span class="meta-label">Numer</span><span class="badge-num">F1Z-2</span></div>
+        <div class="fake-meta-right"><span class="meta-label">Typ fałszerstwa</span><span class="badge-type">F-T2</span></div>
+      </div>
+      <div class="coin-row">
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/F1Z-2_R.jpg" alt="F1Z-2 — rewers" style="cursor:zoom-in" onclick="showLb('lb-f1z2-r')" />
+          <span class="zoom-hint" onclick="showLb('lb-f1z2-r')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Rewers</div>
+        </div>
+        <div class="coin-img-cell">
+          <img loading="lazy" src="img/F1Z-2_A.jpg" alt="F1Z-2 — awers" style="cursor:zoom-in" onclick="showLb('lb-f1z2-a')" />
+          <span class="zoom-hint" onclick="showLb('lb-f1z2-a')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="15.5" y1="15.5" x2="21" y2="21"/><line x1="10" y1="7" x2="10" y2="13"/><line x1="7" y1="10" x2="13" y2="10"/></svg></span>
+          <div class="img-label">Awers</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-hr">
+
+    <h2>Dodatek</h2>
+
+    <p>Filmy prezentujące różnice (i podobieństwa) w kroju liter punc użytych do nabicia napisu PRÓBA (fałszerstwo F-T1) na przykładzie monet 20 groszy 1949:</p>
+    <ol>
+      <li><a href="https://youtube.com/shorts/wQuOvvo6ccw?feature=share" target="_blank" rel="noopener">FALS i FALS</a></li>
+      <li><a href="https://youtube.com/shorts/oe2on3gra8o?feature=share" target="_blank" rel="noopener">FALS i OK</a></li>
+      <li><a href="https://youtube.com/shorts/-gSjQhkYz-o?feature=share" target="_blank" rel="noopener">OK i OK</a></li>
+    </ol>
 
   </div>
-
-  <div class="section-label">Smaczki gradingu</div>
-  <div class="articles">
-
-    <a href="./2025-12-29-co-wy-tam-gradujecie/" class="art-card" data-tags="Grading,NGC,Próby PRL">
-      <div class="art-card-hero" style="background:#fff;border-bottom:1px solid var(--rule)">
-        <img loading="lazy" src="./2025-12-29-co-wy-tam-gradujecie/img/title-3.png" alt="" style="max-height:140px;width:auto;object-fit:contain" />
-      </div>
-      <div class="art-card-body">
-        <div class="art-card-meta">
-          <span class="art-card-date">29 grudnia 2025</span>
-          <div class="art-card-tags">
-            <span class="art-card-tag">Grading</span>
-            <span class="art-card-tag">NGC</span>
-            <span class="art-card-tag">Próby PRL</span>
-          </div>
-        </div>
-        <div class="art-card-title">Co Wy tam gradujecie…</div>
-        <div class="art-card-subtitle">…czyli nieoczywiste zalety gradingu</div>
-        <p class="art-card-excerpt">O tym jak grading monet może służyć jako narzędzie badawcze — dokumentując istnienie monet w kolekcjach prywatnych.</p>
-      </div>
-      <div class="art-card-footer">
-        <span class="art-card-readmore">Czytaj →</span>
-        <span class="art-card-readtime">8 min</span>
-      </div>
-    </a>
-
-  </div>
-
-</main>
+</article>
 
 <footer class="site-footer">
   <div class="footer-logo">Coinage.pl</div>
   <p class="footer-copy">© 2024-2026 coinage.pl</p>
 </footer>
 
+<!-- ── LIGHTBOXES ── -->
+<div id="lb-punca-ref"  class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/punca_ref.jpg"  alt="" /></div>
+<div id="lb-punca-ft1"  class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/punca_FT1.jpg"  alt="" /></div>
+<div id="lb-punca-ft2"  class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/punca_FT2.jpg"  alt="" /></div>
+<div id="lb-punca-ft3a" class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/punca_FT3a.jpg" alt="" /></div>
+<div id="lb-punca-ft3b" class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/punca_FT3b.jpg" alt="" /></div>
+<div id="lb-punca-ft4"  class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/punca_FT4.jpg"  alt="" /></div>
+<div id="lb-2gr-orig-r"      class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/2gr_orig_R.jpg"       alt="" /></div>
+<div id="lb-2gr-orig-a"      class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/2gr_orig_A.jpg"       alt="" /></div>
+<div id="lb-f2g1-r"          class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/F2G-1_R.jpg"          alt="" /></div>
+<div id="lb-f2g1-a"          class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/F2G-1_A.jpg"          alt="" /></div>
+<div id="lb-5gral-orig-r"    class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/5gr_al_orig_R.jpg"    alt="" /></div>
+<div id="lb-5gral-orig-a"    class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/5gr_al_orig_A.jpg"    alt="" /></div>
+<div id="lb-f5g1-r"          class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/F5G-1_R.jpg"          alt="" /></div>
+<div id="lb-f5g1-a"          class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/F5G-1_A.jpg"          alt="" /></div>
+<div id="lb-f5g2-r"          class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/F5G-2_R.jpg"          alt="" /></div>
+<div id="lb-f5g2-a"          class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/F5G-2_A.jpg"          alt="" /></div>
+<div id="lb-f10g1-r"         class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/F10G-1_R.jpg"         alt="" /></div>
+<div id="lb-f10g1-a"         class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/F10G-1_A.jpg"         alt="" /></div>
+<div id="lb-f10g2-r"         class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/F10G-2_R.jpg"         alt="" /></div>
+<div id="lb-f10g2-a"         class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/F10G-2_A.jpg"         alt="" /></div>
+<div id="lb-10grcuni-orig-r" class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/10gr_cuni_orig_R.jpg" alt="" /></div>
+<div id="lb-10grcuni-orig-a" class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/10gr_cuni_orig_A.jpg" alt="" /></div>
+<div id="lb-f10g3-r"         class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/F10G-3_R.jpg"         alt="" /></div>
+<div id="lb-f10g3-a"         class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/F10G-3_A.jpg"         alt="" /></div>
+<div id="lb-20gr-orig-r"     class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/20gr_orig_R.jpg"      alt="" /></div>
+<div id="lb-20gr-orig-a"     class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/20gr_orig_A.jpg"      alt="" /></div>
+<div id="lb-f20g1-r"         class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/F20G-1_R.jpg"         alt="" /></div>
+<div id="lb-f20g1-a"         class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/F20G-1_A.jpg"         alt="" /></div>
+<div id="lb-f20g2-r"         class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/F20G-2_R.jpg"         alt="" /></div>
+<div id="lb-f20g2-a"         class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/F20G-2_A.jpg"         alt="" /></div>
+<div id="lb-f20g3-r"         class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/F20G-3_R.jpg"         alt="" /></div>
+<div id="lb-f20g3-a"         class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/F20G-3_A.jpg"         alt="" /></div>
+<div id="lb-1zl-orig-r"      class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/1zl_orig_R.jpg"       alt="" /></div>
+<div id="lb-1zl-orig-a"      class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/1zl_orig_A.jpg"       alt="" /></div>
+<div id="lb-f1z1-r"          class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/F1Z-1_R.jpg"          alt="" /></div>
+<div id="lb-f1z1-a"          class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/F1Z-1_A.jpg"          alt="" /></div>
+<div id="lb-f1z2-r"          class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/F1Z-2_R.jpg"          alt="" /></div>
+<div id="lb-f1z2-a"          class="lightbox" onclick="this.style.display='none'"><img loading="lazy" src="img/F1Z-2_A.jpg"          alt="" /></div>
+
 <script>
-function filterCards(el, tag) {
-  document.querySelectorAll('.ftag').forEach(function(t){ t.classList.remove('ftag-active'); });
-  el.classList.add('ftag-active');
-  document.querySelectorAll('.art-card').forEach(function(card) {
-    var match = !tag || (card.dataset.tags||'').indexOf(tag) !== -1;
-    card.classList.toggle('dimmed', !match);
-  });
-}
+function showLb(id){document.getElementById(id).style.display='flex'}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.lightbox').forEach(function(el){el.style.display='none'})});
 </script>
 
 </body>
