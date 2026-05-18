@@ -15,6 +15,55 @@
 <script data-goatcounter="https://TWOJA-NAZWA.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 -->
+<style>
+/* ── TABELE NOTOWAŃ ── */
+.denom-block{border:1px solid var(--rule);border-radius:6px;overflow:visible;margin-bottom:1.4rem}
+.denom-header{background:var(--green);padding:9px 16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;border-radius:5px 5px 0 0}
+.denom-title{font-family:var(--heading);font-size:.95rem;font-weight:700;color:#fff}
+.denom-count{font-family:var(--mono);font-size:.5rem;color:rgba(255,255,255,.6);letter-spacing:.08em}
+table.notow{width:100%;border-collapse:collapse;font-family:var(--serif);font-size:.82rem;table-layout:fixed}
+table.notow th{font-family:var(--mono);font-size:.46rem;letter-spacing:.12em;text-transform:uppercase;padding:6px 10px;border-bottom:2px solid var(--rule);text-align:left;background:var(--gray-bg);color:var(--text);font-weight:500}
+table.notow th.c{text-align:center}
+table.notow td{padding:7px 10px;border-bottom:1px solid var(--rule);vertical-align:middle;color:var(--text)}
+table.notow tr:last-child td{border-bottom:none}
+table.notow tr:hover td{background:#fafaf8}
+table.notow tr.withdrawn td{opacity:.5}
+.badge-tx{font-family:var(--mono);font-size:.55rem;font-weight:700;color:var(--red);border:1.5px solid var(--red);border-radius:3px;padding:2px 7px;white-space:nowrap;display:inline-block}
+.badge-type{font-family:var(--mono);font-size:.55rem;font-weight:700;background:var(--red);color:#fff;border-radius:3px;padding:2px 7px;display:inline-block;margin-left:5px}
+.sep-row td{background:var(--red-bg);padding:4px 12px;border-bottom:1px solid var(--red-bdr);border-top:1px solid var(--red-bdr)}
+.sep-inner{display:flex;align-items:center;width:100%}
+.tx-num{font-family:var(--mono);font-size:.6rem;color:var(--text-dim)}
+.date-cell{font-family:var(--mono);font-size:.6rem;color:var(--text-dim);white-space:nowrap}
+.weight-cell{font-family:var(--mono);font-size:.6rem;color:var(--text-dim);text-align:center}
+.price-cell{font-family:var(--mono);font-size:.68rem;font-weight:700;text-align:center;line-height:1.5}
+.price-val{display:block}
+.price-val.struck{text-decoration:line-through;color:var(--text-faint)}
+.tag-wycofana{display:inline-block;margin-top:2px;font-family:var(--mono);font-size:.44rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;background:#fff3f0;color:var(--red);border:1px solid var(--red-bdr);border-radius:3px;padding:1px 5px}
+.tag-ngc{font-family:var(--mono);font-size:.5rem;background:var(--green-lt);color:var(--green);border:1px solid var(--green-bdr);border-radius:3px;padding:1px 5px;letter-spacing:.03em;white-space:nowrap;display:inline-block}
+.note-cell{font-size:.75rem;font-style:italic;color:var(--text-dim);line-height:1.5}
+.link-cell{text-align:center}
+.link-cell a{font-family:var(--mono);font-size:.55rem;color:var(--green);text-decoration:none}
+.link-cell a:hover{text-decoration:underline}
+.coin-imgs{display:flex;gap:5px;align-items:flex-start}
+.img-wrap{display:flex;flex-direction:column;align-items:center;gap:2px}
+.coin-img{max-height:80px;width:auto;border-radius:3px;border:1px solid var(--rule);cursor:zoom-in}
+#lb{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.88);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out}
+#lb img{max-width:92%;max-height:92vh;border-radius:4px;box-shadow:0 4px 32px rgba(0,0,0,.6)}
+.hint-box{font-family:var(--mono);font-size:.62rem;letter-spacing:.03em;color:#5a4a10;background:#fffbe6;border:1px solid #e8d878;border-left:3px solid #c8b840;border-radius:0 4px 4px 0;padding:.55rem .9rem;margin-bottom:1.4rem;line-height:1.6}
+/* Metal badge tooltip */
+.metal{position:relative}
+.metal::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 5px);left:50%;transform:translateX(-50%);background:#1a1a18;color:#fff;font-family:var(--mono);font-size:.42rem;font-weight:400;letter-spacing:.06em;white-space:nowrap;padding:3px 7px;border-radius:3px;pointer-events:none;opacity:0;transition:opacity .15s;z-index:999}
+.metal:hover::after{opacity:1}
+.metal-Al{background:#A8AAAD;color:#1a1a1a;border-color:#888}
+.metal-CuNi{background:#78828C;color:#fff;border-color:#566}
+.metal-B{background:#A0522D;color:#fff;border-color:#7a3a1a}
+/* COLLAPSIBLE UPDATES */
+.updates-older summary{font-family:var(--mono);font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green);cursor:pointer;user-select:none;padding:.35rem 0;display:inline-flex;align-items:center;gap:.4rem;list-style:none}
+.updates-older summary::-webkit-details-marker{display:none}
+.updates-older summary::before{content:'▶';font-size:.5rem;transition:transform .2s;display:inline-block}
+.updates-older[open] summary::before{transform:rotate(90deg)}
+hr.section-hr{border:none;border-top:1px solid var(--rule);width:60%;margin:1.8rem auto}
+</style>
 </head>
 <body>
 
